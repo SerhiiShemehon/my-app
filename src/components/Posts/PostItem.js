@@ -25,11 +25,11 @@ function PostItem({
           </a>
           <div className={style.info}>
             <button className={style.infoItem}>
-              <svg width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.666656 7C0.666656 7 3.33332 1.66666 7.99999 1.66666C12.6667 1.66666 15.3333 7 15.3333 7C15.3333 7 12.6667 12.3333 7.99999 12.3333C3.33332 12.3333 0.666656 7 0.666656 7Z" stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 8.99999C9.10457 8.99999 10 8.10456 10 6.99999C10 5.89542 9.10457 4.99999 8 4.99999C6.89543 4.99999 6 5.89542 6 6.99999C6 8.10456 6.89543 8.99999 8 8.99999Z" stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.666656 7C0.666656 7 3.33332 1.66666 7.99999 1.66666C12.6667 1.66666 15.3333 7 15.3333 7C15.3333 7 12.6667 12.3333 7.99999 12.3333C3.33332 12.3333 0.666656 7 0.666656 7Z" stroke="white" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/><path d="M8 8.99999C9.10457 8.99999 10 8.10456 10 6.99999C10 5.89542 9.10457 4.99999 8 4.99999C6.89543 4.99999 6 5.89542 6 6.99999C6 8.10456 6.89543 8.99999 8 8.99999Z" stroke="white" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/></svg>
               {views}
             </button>
             <button className={style.infoItem}>
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13 9C13 9.35363 12.8595 9.69276 12.6094 9.94281C12.3594 10.1929 12.0203 10.3333 11.6666 10.3333H3.66664L0.999969 13V2.33334C0.999969 1.97972 1.14045 1.64058 1.39049 1.39053C1.64054 1.14048 1.97968 1 2.3333 1H11.6666C12.0203 1 12.3594 1.14048 12.6094 1.39053C12.8595 1.64058 13 1.97972 13 2.33334V9Z" stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13 9C13 9.35363 12.8595 9.69276 12.6094 9.94281C12.3594 10.1929 12.0203 10.3333 11.6666 10.3333H3.66664L0.999969 13V2.33334C0.999969 1.97972 1.14045 1.64058 1.39049 1.39053C1.64054 1.14048 1.97968 1 2.3333 1H11.6666C12.0203 1 12.3594 1.14048 12.6094 1.39053C12.8595 1.64058 13 1.97972 13 2.33334V9Z" stroke="white" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/></svg>
               {comments}
             </button>
           </div>
