@@ -1,0 +1,38 @@
+.footer {
+  padding: 110px 0;
+  background: #1E1E1E;
+  .container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    .footer-info {
+      flex: 0 0 35%;
+      padding-right: 145px;
+    }
+    .footer-nav {
+      flex: 0 0  65%;
+    }
+  }
+}
+.footer-info {
+  font-size: 18px;
+  line-height: 1.55;
+  .logo {
+    margin-bottom: 25px;
+  }
+  p {
+    margin-bottom: 30px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+.footer-nav {
+  display: flex;
+  margin: 0 -20px;
+  &>* {
+    width: 100%;
+    max-width: 33.33%;
+    padding: 0 20px;
+  }
+}
