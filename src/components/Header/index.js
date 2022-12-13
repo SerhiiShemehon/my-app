@@ -1,4 +1,4 @@
-import {MENU_TOP} from "../../data";
+import {MENU_TOP} from "data";
 
 import React from "react";
 import Logo from "components/Logo";
@@ -13,9 +13,7 @@ function Header() {
         <Logo />
         <NavList className='primary-menu'>
           {MENU_TOP.map((item, index) => (
-            <NavItem key={item.id}>
-              <a href={item.link} className={index === 0 ? 'active' : ''}>{item.title}</a>
-            </NavItem>
+            <NavItem key={item.id} title={item.title} link={item.link} />
           ))}
         </NavList>
       </div>

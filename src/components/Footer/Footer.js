@@ -1,4 +1,4 @@
-import {TOP_CATEGORY, TOP_TAG, FOOTER_MENU} from "../../data";
+import {CATEGORY, TAG, MENU_FOOTER} from "data";
 
 import React from "react";
 import Logo from "components/Logo";
@@ -19,28 +19,22 @@ function Footer() {
         <FooterNav>
           <NavGroup title='Top Category'>
             <NavList className='footer-menu'>
-              {TOP_CATEGORY.map((item, index) => (
-                <NavItem key={item.id}>
-                  <a href={item.link}>{item.title}</a>
-                </NavItem>
+              {CATEGORY.map((item, index) => (
+                <NavItem key={item.id} title={item.title} link={item.link} />
               ))}
             </NavList>
           </NavGroup>
           <NavGroup title='Top Tag'>
             <NavList className='footer-menu'>
-              {TOP_TAG.map((item, index) => (
-                <NavItem key={item.id}>
-                  <a href={item.link}>{item.title}</a>
-                </NavItem>
+              {TAG.map((item, index) => (
+                <NavItem key={item.id} title={item.title} link={item.link} />
               ))}
             </NavList>
           </NavGroup>
           <NavGroup title='Menu'>
             <NavList className='footer-menu'>
-              {FOOTER_MENU.map((item, index) => (
-                <NavItem key={item.id}>
-                  <a href={item.link}>{item.title}</a>
-                </NavItem>
+              {MENU_FOOTER.map((item, index) => (
+                <NavItem key={item.id} title={item.title} link={item.link} />
               ))}
             </NavList>
           </NavGroup>

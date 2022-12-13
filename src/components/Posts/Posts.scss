@@ -26,7 +26,7 @@
     background-position: calc(100% - 22px) 50%;
     background-repeat: no-repeat;
     background-size: 12px;
-    background-image: url("../../images/chevron-down.svg");
+    background-image: url("../../assets/icons/chevron-down.svg");
   }
   input {
     margin-left: auto;
@@ -35,7 +35,7 @@
     background-position: 17px 50%;
     background-repeat: no-repeat;
     background-size: 16px;
-    background-image: url("../../images/search.svg");
+    background-image: url("../../assets/icons/search.svg");
     &::-webkit-input-placeholder {
       color: rgba(#F2F2F2, 0.6);
     }
@@ -52,16 +52,15 @@
 }
 
 .posts-list {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0 -38px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-auto-rows: auto;
+  column-gap: 38px;
+  row-gap: 76px;
+  margin-bottom: 76px;
   .post-item {
-    padding: 0 38px;
-    width: 100%;
-    max-width: 33.333%;
-    margin-bottom: 76px;
     &:first-child {
-      max-width: 100%;
+      grid-column: 1 / -1;
     }
   }
 }

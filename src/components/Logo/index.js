@@ -1,9 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import style from './Logo.module.scss'
 
 function Logo() {
   return (
-      <a href="/" className={style.logo}>My App</a>
+      <Link to="/" className={style.logo}>My App</Link>
   )
 }
 

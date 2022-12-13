@@ -1,10 +1,10 @@
 import React from "react";
 
 
-function PostPagination() {
+function PostPagination({onClick}) {
   return (
     <div className='posts-pagination'>
-      <button className='btn btn-big' type='button'>Load more</button>
+      <button className='btn btn-big' type='button' onClick={onClick}>Load more</button>
     </div>
   )
 }

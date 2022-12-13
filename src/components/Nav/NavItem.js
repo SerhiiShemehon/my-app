@@ -1,9 +1,10 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
-function NavItem({children}) {
+function NavItem({title, link, className}) {
   return (
     <li className="nav-item">
-      {children}
+      <NavLink to={link} className={className}>{title}</NavLink>
     </li>
   )
 }
