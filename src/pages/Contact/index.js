@@ -5,11 +5,13 @@ import {Form, Input, Textarea} from "components/Form";
 import {SocialLinkList, SocialLinkItem} from "components/SocialLinks"
 import notify from "utils/notification.helpers"
 
+import { ReactComponent as Twitter } from 'assets/icons/twitter.svg'
+import { ReactComponent as Facebook } from 'assets/icons/facebook.svg'
+import { ReactComponent as Google } from 'assets/icons/google.svg'
+import { ReactComponent as Github } from 'assets/icons/github.svg'
+
 import imageBanner from 'assets/images/image03.jpg';
-import twitter from 'assets/icons/twitter.svg';
-import facebook from 'assets/icons/facebook.svg';
-import google from 'assets/icons/google.svg';
-import github from 'assets/icons/github.svg';
+
 import './Contact.scss'
 
 function Contact() {
@@ -78,10 +80,10 @@ function Contact() {
         <div className='social-links-section'>
           <h3 className='title-block'>follow me</h3>
           <SocialLinkList>
-            <SocialLinkItem link={'https://twitter.com/'} icon={twitter} alt={'twitter'} />
-            <SocialLinkItem link={'https://www.facebook.com/'} icon={facebook} alt={'facebook'} />
-            <SocialLinkItem link={'https://www.google.com/'} icon={google} alt={'google'} />
-            <SocialLinkItem link={'https://github.com/'} icon={github} alt={'github'} />
+            <SocialLinkItem link={'https://twitter.com/'} Icon={Twitter} />
+            <SocialLinkItem link={'https://www.facebook.com/'} Icon={Facebook} />
+            <SocialLinkItem link={'https://www.google.com/'} Icon={Google} />
+            <SocialLinkItem link={'https://github.com/'} Icon={Github} />
           </SocialLinkList>
         </div>
       </div>

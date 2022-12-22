@@ -84,11 +84,19 @@
       height: 12px;
       border-radius: 0 2px 2px 0;
     }
-    img {
+    svg {
       margin-right: 15px;
       width: 18px;
       height: 18px;
       object-fit: contain;
+      path {
+        &[fill] {
+          fill: currentColor;
+        }
+        &[stroke] {
+          stroke: currentColor;
+        }
+      }
     }
   }
 }

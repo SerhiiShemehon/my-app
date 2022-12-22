@@ -17,7 +17,7 @@ const DashboardSidebar = () => {
             key={item.id}
             title={item.title}
             link={item.link}
-            icon={item.icon}
+            Icon={item.icon}
           />
         ))}
       </NavList>

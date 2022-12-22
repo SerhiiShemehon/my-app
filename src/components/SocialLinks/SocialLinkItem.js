@@ -1,10 +1,10 @@
 import React from "react";
 
-function SocialLinkItem({icon, alt, link}) {
+function SocialLinkItem({Icon, alt, link}) {
   return (
     <li className="social-link-item">
       <a href={link}>
-        <img src={icon} alt={alt} />
+        <Icon />
       </a>
     </li>
   )
