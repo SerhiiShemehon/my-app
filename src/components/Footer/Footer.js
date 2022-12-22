@@ -10,7 +10,7 @@ import './Footer.scss'
 function Footer() {
   return (
     <footer className='footer'>
-      <div className='container'>
+      <div className='container container-big'>
         <FooterInfo>
           <Logo />
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>

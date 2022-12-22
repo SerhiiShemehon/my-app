@@ -1,0 +1,12 @@
+.diagram-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px -50px;
+  .diagram-item {
+    width: 100%;
+    max-width: 50%;
+    padding: 0 15px;
+    height: 300px;
+    margin-bottom: 50px;
+  }
+}

@@ -48,3 +48,47 @@
     line-height: 1.2;
   }
 }
+
+.dashboard-menu {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  .nav-item {
+    margin-bottom: 38px;
+    line-height: 1;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  a {
+    display: flex;
+    align-items: center;
+    padding-left: 32px;
+    position: relative;
+    font-weight: 500;
+    font-size: 21px;
+    letter-spacing: -0.01em;
+    color: #C1C6DB;
+    text-decoration: none;
+    &.active, &:hover {
+      color: #BDB2FF;
+    }
+    &:before {
+      content: '';
+      background: currentColor;
+      transform: translateY(-50%);
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 2px;
+      height: 12px;
+      border-radius: 0 2px 2px 0;
+    }
+    img {
+      margin-right: 15px;
+      width: 18px;
+      height: 18px;
+      object-fit: contain;
+    }
+  }
+}

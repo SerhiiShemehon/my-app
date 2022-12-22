@@ -9,7 +9,7 @@ import './Header.scss'
 function Header() {
   return (
     <header className='header'>
-      <div className='container'>
+      <div className='container container-big'>
         <Logo />
         <NavList className='primary-menu'>
           {MENU_TOP.map((item, index) => (

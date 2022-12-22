@@ -1,9 +1,15 @@
 import Home from './Home';
+import Contact from './Contact';
 import NoMatch from './NoMatch';
-import Post from './Post';
+import Dashboard from './Dashboard';
+import Posts from './Posts';
+import Tasks from './Tasks';
 
 export {
   Home,
-  Post,
-  NoMatch
+  Contact,
+  NoMatch,
+  Dashboard,
+  Posts,
+  Tasks
 };

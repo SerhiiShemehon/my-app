@@ -10,8 +10,8 @@ function ImageBanner({
   return (
     <div style={{backgroundImage: `url("${image}")`}} className={style.banner}>
       <div className={`container ${style.container}`}>
-        {title && <h1 className={style.title}>{title}</h1>}
-        {link && <Link className={`btn btn-big ${style.btn}`} to={link.url}>{link.title}</Link>}
+        {title ? <h1 className={style.title}>{title}</h1> : null}
+        {link ? <Link className={`btn btn-big ${style.btn}`} to={link.url}>{link.title}</Link> : null}
       </div>
     </div>
   )

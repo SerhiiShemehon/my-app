@@ -1,8 +1,8 @@
 const MENU_FOOTER = [
   {
     id: 1,
-    title: 'Item',
-    link: '#'
+    title: 'Home',
+    link: '/'
   },
   {
     id: 2,
@@ -16,8 +16,8 @@ const MENU_FOOTER = [
   },
   {
     id: 4,
-    title: 'Item',
-    link: '#'
+    title: 'Contact',
+    link: '/contact'
   }
 ]
 
