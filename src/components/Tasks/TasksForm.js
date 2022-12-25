@@ -14,10 +14,10 @@ const TasksForm = ({addedTasks}) => {
     setTitle(e.target.value)
   }
   return (
-    <div className='task-form'>
+    <div className={'task-form'}>
       <Form handleSubmit={handleSubmit}>
-        <Input handleChange={handleChange} placeholder='Type here...' name='title' />
-        <button type='submit'>submit</button>
+        <Input handleChange={handleChange} placeholder={'Type here...'} name={'title'} />
+        <button type={'submit'}>submit</button>
       </Form>
     </div>
   )

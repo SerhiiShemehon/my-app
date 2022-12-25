@@ -31,7 +31,15 @@
     max-width: 100%;
   }
 }
-
+.dashboard-header {
+  margin: 0 0 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .dashboard-title {
+    margin: 0;
+  }
+}
 .dashboard-title {
   font-weight: 600;
   font-size: 32px;

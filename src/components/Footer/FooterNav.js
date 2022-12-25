@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
 function FooterNav({children}) {
   return (
-    <div className='footer-nav'>
+    <div className={'footer-nav'}>
       {children}
     </div>
   )

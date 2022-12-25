@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
 function SocialLinkItem({Icon, alt, link}) {
   return (
-    <li className="social-link-item">
+    <li className={'social-link-item'}>
       <a href={link}>
         <Icon />
       </a>

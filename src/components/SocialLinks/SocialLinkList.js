@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 import './SocialLinks.scss';
 
 function SocialLinkList({children}) {
   return (
-    <ul className='social-link-list'>
+    <ul className={'social-link-list'}>
       {children}
     </ul>
   )

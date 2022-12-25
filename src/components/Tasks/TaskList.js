@@ -9,7 +9,7 @@ const TaskList = ({
   removeTasks
 }) => {
  return (
-   <div className='task-list'>
+   <div className={'task-list'}>
      {tasks.map(task => <TaskItem key={task.id} task={task} updateTasks={updateTasks} removeTasks={removeTasks} />)}
    </div>
  )

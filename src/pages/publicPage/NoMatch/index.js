@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-import ImageBanner from "components/ImageBanner";
+import ImageBanner from 'components/ImageBanner';
 import imageBanner from 'assets/images/image02.jpg';
 
 function NoMatch() {

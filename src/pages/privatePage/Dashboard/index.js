@@ -1,6 +1,6 @@
-import React, {Suspense} from "react";
+import React, {Suspense} from 'react';
 
-import Loading from "components/Loading";
+import Loading from 'components/Loading';
 
 import './Dashboard.scss'
 
@@ -13,24 +13,24 @@ const LineBarAreaComposedChart = React.lazy(()=> import('components/Diagram/Line
 function Dashboard() {
   return (
     <>
-      <h1 className='dashboard-title'>Dashboard</h1>
-      <div className="diagram-list">
-        <div className="diagram-item">
+      <h1 className={'dashboard-title'}>Dashboard</h1>
+      <div className={'diagram-list'}>
+        <div className={'diagram-item'}>
           <Suspense fallback={<Loading />}>
             <StackedAreaChart />
           </Suspense>
         </div>
-        <div className="diagram-item">
+        <div className={'diagram-item'}>
           <Suspense fallback={<Loading />}>
             <SimpleLineChart />
           </Suspense>
         </div>
-        <div className="diagram-item">
+        <div className={'diagram-item'}>
           <Suspense fallback={<Loading />}>
             <TinyBarChart />
           </Suspense>
         </div>
-        <div className="diagram-item">
+        <div className={'diagram-item'}>
           <Suspense fallback={<Loading />}>
             <LineBarAreaComposedChart />
           </Suspense>

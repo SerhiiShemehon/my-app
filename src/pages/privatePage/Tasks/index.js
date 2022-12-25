@@ -1,7 +1,7 @@
-import React, {useState, Suspense} from "react";
+import React, {useState, Suspense} from 'react';
 
 import {TasksForm} from 'components/Tasks';
-import Loading from "components/Loading";
+import Loading from 'components/Loading';
 
 const TaskList = React.lazy(()=> import('components/Tasks/TaskList'));
 
@@ -41,7 +41,7 @@ function Tasks() {
 
   return (
     <>
-      <h1 className='dashboard-title'>Tasks</h1>
+      <h1 className={'dashboard-title'}>Tasks</h1>
       {tasks.length
         ? (<Suspense fallback={<Loading />}>
             <TaskList
@@ -50,7 +50,7 @@ function Tasks() {
               removeTasks={removeTasks}
             />
           </Suspense>)
-        : <div className='no-tasks'>No tasks</div>
+        : <div className={'no-tasks'}>No tasks</div>
       }
 
       <TasksForm addedTasks={addedTasks} />

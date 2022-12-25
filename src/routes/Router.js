@@ -1,8 +1,9 @@
-import React from "react";
-import { Routes, Route } from "react-router-dom";
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
 
-import { PublicLayout, PrivateLayout } from "layouts";
-import { Home, Contact, NoMatch, Dashboard, Posts, Tasks } from "pages";
+import { PublicLayout, PrivateLayout } from 'layouts';
+import { Home, Contact, Post, NoMatch } from 'pages/publicPage';
+import { Dashboard, Posts, Tasks } from 'pages/privatePage';
 
 import 'assets/css/style.scss';
 
@@ -11,6 +12,7 @@ function Router() {
     <Routes>
       <Route element={<PublicLayout />}>
         <Route index element={<Home />} />
+        <Route path='/post/:id' element={<Post />} />
         <Route path='/contact' element={<Contact />} />
         <Route path='*' element={<NoMatch />} />
       </Route>

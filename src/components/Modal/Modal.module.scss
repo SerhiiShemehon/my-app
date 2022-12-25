@@ -1,0 +1,19 @@
+.holder {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(27, 29, 33, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  background: #262835;
+  border-radius: 20px;
+  padding: 75px 155px 90px;
+  max-width: 1100px;
+}

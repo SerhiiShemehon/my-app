@@ -1,9 +1,9 @@
-import React, {useState} from "react";
+import React, {useState} from 'react';
 
-import ImageBanner from "components/ImageBanner";
-import {Form, Input, Textarea} from "components/Form";
-import {SocialLinkList, SocialLinkItem} from "components/SocialLinks"
-import notify from "utils/notification.helpers"
+import ImageBanner from 'components/ImageBanner';
+import {Form, Input, Textarea} from 'components/Form';
+import {SocialLinkList, SocialLinkItem} from 'components/SocialLinks'
+import notify from 'utils/notification.helpers'
 
 import { ReactComponent as Twitter } from 'assets/icons/twitter.svg'
 import { ReactComponent as Facebook } from 'assets/icons/facebook.svg'
@@ -37,48 +37,48 @@ function Contact() {
   return (
     <>
       <ImageBanner image={imageBanner} title={'Contact'} />
-      <div className='container'>
-        <div className='form-section'>
-          <h2 className='title-block'>Contact Form</h2>
+      <div className={'container'}>
+        <div className={'form-section'}>
+          <h2 className={'title-block'}>Contact Form</h2>
           <Form handleSubmit={handleSubmit}>
             <Input
               handleChange={handleChange}
-              type='text'
-              placeholder='First Name'
-              name='fmame'
+              type={'text'}
+              placeholder={'First Name'}
+              name={'fmame'}
               required
-              className='col-6' />
+              className={'col-6'} />
             <Input
               handleChange={handleChange}
-              type='text'
-              placeholder='Last Name'
-              name='lmame'
+              type={'text'}
+              placeholder={'Last Name'}
+              name={'lmame'}
               required
-              className='col-6' />
+              className={'col-6'} />
             <Input
               handleChange={handleChange}
-              type='email'
-              placeholder='Email'
-              name='email'
+              type={'email'}
+              placeholder={'Email'}
+              name={'email'}
               required
-              className='col-6' />
+              className={'col-6'} />
             <Input
               handleChange={handleChange}
-              type='text'
-              placeholder='Phone'
-              name='phone'
+              type={'text'}
+              placeholder={'Phone'}
+              name={'phone'}
               required
-              className='col-6' />
+              className={'col-6'} />
             <Textarea
               handleChange={handleChange}
-              placeholder='Message'
+              placeholder={'Message'}
               required
-              name='message' />
-            <button type='submit' className='btn'>Send</button>
+              name={'message'} />
+            <button type={'submit'} className={'btn-second'}>Send</button>
           </Form>
         </div>
-        <div className='social-links-section'>
-          <h3 className='title-block'>follow me</h3>
+        <div className={'social-links-section'}>
+          <h3 className={'title-block'}>follow me</h3>
           <SocialLinkList>
             <SocialLinkItem link={'https://twitter.com/'} Icon={Twitter} />
             <SocialLinkItem link={'https://www.facebook.com/'} Icon={Facebook} />
