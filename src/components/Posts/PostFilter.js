@@ -33,14 +33,14 @@ function PostFilter({
     filter(e.target.value, abv_lt, ibu_lt)
   }
 
-  const selectChangeABV = (value) => {
-    setAbvLt(value);
-    filter(beer_name, value, ibu_lt)
+  const selectChangeABV = (e) => {
+    setAbvLt(e.target.value);
+    filter(beer_name, e.target.value, ibu_lt)
   }
 
-  const selectChangeIBU = (value) => {
-    setIbuLt(value);
-    filter(beer_name, abv_lt, value)
+  const selectChangeIBU = (e) => {
+    setIbuLt(e.target.value);
+    filter(beer_name, abv_lt, e.target.value)
   }
 
 

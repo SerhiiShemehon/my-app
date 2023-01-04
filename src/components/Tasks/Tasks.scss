@@ -106,6 +106,14 @@
 }
 
 .task-form {
+  position: relative;
+  .error-input {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    font-size: 14px;
+    color: red;
+  }
   input {
     width: 50%;
     background: #FFFFFF;

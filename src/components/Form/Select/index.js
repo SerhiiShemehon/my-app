@@ -13,7 +13,7 @@ function Select({
       {...props}
     >
       <option value='0'>{firstOption}</option>
-      {options.map((item, index) => <option key={index} value={item.toLowerCase()}>{item}</option>)}
+      {options.map((item, index) => <option key={index} value={typeof item === 'string' ? item.toLowerCase() : item}>{item}</option>)}
     </select>
   )
 }

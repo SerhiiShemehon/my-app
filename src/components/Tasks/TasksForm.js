@@ -2,22 +2,25 @@ import React, {useState} from 'react'
 import {Form, Input} from 'components/Form';
 
 const TasksForm = ({addedTasks}) => {
-  const [title, setTitle] = useState('')
+  const [characterLength, setCharacterLength] = useState(false)
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    e.target[0].value = '';
-    addedTasks(title)
+    if (e.target[0].value.length > 2) {
+      addedTasks(e.target[0].value)
+      e.target[0].value = '';
+      setCharacterLength(false)
+    } else {
+      setCharacterLength(true)
+    }
   }
 
-  const handleChange = (e) => {
-    setTitle(e.target.value)
-  }
   return (
     <div className={'task-form'}>
       <Form handleSubmit={handleSubmit}>
-        <Input handleChange={handleChange} placeholder={'Type here...'} name={'title'} />
+        <Input placeholder={'Type here...'} name={'title'} />
         <button type={'submit'}>submit</button>
+        {characterLength ? <div className={'error-input'}>more than three symbols</div> : null}
       </Form>
     </div>
   )

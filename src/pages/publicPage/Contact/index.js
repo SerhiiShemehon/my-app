@@ -64,9 +64,10 @@ function Contact() {
               className={'col-6'} />
             <Input
               handleChange={handleChange}
-              type={'text'}
+              type={'tel'}
               placeholder={'Phone'}
               name={'phone'}
+              pattern="[0-9]{10,}"
               required
               className={'col-6'} />
             <Textarea

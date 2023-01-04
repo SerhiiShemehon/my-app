@@ -1,113 +1,115 @@
-.post-list {
-  line-height: 1;
-  display: flex;
-  flex-direction: column;
-}
-.post-header,
-.post-item {
-  margin-bottom: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: #FFFFFF;
-  border: 1px solid #E6E7E9;
-  border-radius: 8px;
-  padding: 20px;
-  &>span,
-  &>div {
-    width: 100%;
-    &:last-child {
-      width: 72px;
-      flex-shrink: 0;
-    }
+.dashboard-content {
+  .post-list {
+    line-height: 1;
+    display: flex;
+    flex-direction: column;
   }
-}
-.post-header {
-  padding: 14px 20px;
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 1.4;
-  letter-spacing: -0.02em;
-  color: rgba(24, 24, 25, 0.7);
-}
-.post-item {
-  font-size: 14px;
-  line-height: 1.4;
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  color: rgba(24, 24, 25, 0.9);
-  .status-block,
-  .date-block {
-    font-size: 12px;
-    padding: 4px 12px;
-    background: rgba(86, 87, 88, 0.12);
-    border-radius: 12px;
-    &.status-publish {
-      color: #8C18E2;
-      background: #F2E7FC;
-    }
-    &.status-future {
-      color: #17BE1E;
-      background: #CBFFB3;
-    }
-    &.status-draft {
-      color: #2AABBC;
-      background: #B0ECFF;
-    }
-  }
-  button {
-    background: transparent;
-    padding: 0;
-    border: none;
-    cursor: pointer;
-  }
-  .setting-block {
-    position: relative;
-    .opener-setting {
-      height: 20px;
-      width: 20px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .setting-holder {
-      position: absolute;
-      top: -20px;
-      right: calc(100% - 10px);
-      background: #EBEBEB;
-      border-radius: 10px;
-      padding: 15px;
-      width: 97px;
-      filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.25));
-      &:after {
-        content: '';
-        position: absolute;
-        top: 21px;
-        left: 100%;
-        width: 0;
-        height: 0;
-        border-left: 15px solid #EBEBEB;
-        border-top: 9px solid transparent;
-        border-bottom: 9px solid transparent;
+  .post-header,
+  .post-item {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #FFFFFF;
+    border: 1px solid #E6E7E9;
+    border-radius: 8px;
+    padding: 20px;
+    &>span,
+    &>div {
+      width: 100%;
+      &:last-child {
+        width: 72px;
+        flex-shrink: 0;
       }
-      button {
-        display: block;
-        text-align: left;
-        margin-bottom: 7px;
-        &:last-child {
-          margin-bottom: 0;
+    }
+  }
+  .post-header {
+    padding: 14px 20px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.4;
+    letter-spacing: -0.02em;
+    color: rgba(24, 24, 25, 0.7);
+  }
+  .post-item {
+    font-size: 14px;
+    line-height: 1.4;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: rgba(24, 24, 25, 0.9);
+    .status-block,
+    .date-block {
+      font-size: 12px;
+      padding: 4px 12px;
+      background: rgba(86, 87, 88, 0.12);
+      border-radius: 12px;
+      &.status-publish {
+        color: #8C18E2;
+        background: #F2E7FC;
+      }
+      &.status-future {
+        color: #17BE1E;
+        background: #CBFFB3;
+      }
+      &.status-draft {
+        color: #2AABBC;
+        background: #B0ECFF;
+      }
+    }
+    button {
+      background: transparent;
+      padding: 0;
+      border: none;
+      cursor: pointer;
+    }
+    .setting-block {
+      position: relative;
+      .opener-setting {
+        height: 20px;
+        width: 20px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .setting-holder {
+        position: absolute;
+        top: -20px;
+        right: calc(100% - 10px);
+        background: #EBEBEB;
+        border-radius: 10px;
+        padding: 15px;
+        width: 97px;
+        filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.25));
+        &:after {
+          content: '';
+          position: absolute;
+          top: 21px;
+          left: 100%;
+          width: 0;
+          height: 0;
+          border-left: 15px solid #EBEBEB;
+          border-top: 9px solid transparent;
+          border-bottom: 9px solid transparent;
+        }
+        button {
+          display: block;
+          text-align: left;
+          margin-bottom: 7px;
+          &:last-child {
+            margin-bottom: 0;
+          }
         }
       }
     }
   }
-}
 
-.no-post {
-  margin-bottom: 50px;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 1.4;
+  .no-post {
+    margin-bottom: 50px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.4;
+  }
 }
 
 .post-form {
