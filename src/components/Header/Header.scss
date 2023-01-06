@@ -1,9 +1,22 @@
 .header {
   padding: 49px 0 40px;
   background: #1E1E1E;
+  position: relative;
+  z-index: 100;
   .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
+  }
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  .primary-menu {
+    margin-right: 60px;
+    &:last-child {
+      margin-right: 0;
+    }
   }
 }
