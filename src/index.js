@@ -3,13 +3,17 @@ import ReactDOM from 'react-dom/client';
 import {BrowserRouter} from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
 
+import { UserContext } from 'context/userContext';
 import Router from 'routes/Router';
+import { USERS } from 'data';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <Router />
+      <UserContext.Provider value={USERS[0]}>
+        <Router />
+      </UserContext.Provider>
     </BrowserRouter>
   </React.StrictMode>
 );

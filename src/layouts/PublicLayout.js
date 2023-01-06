@@ -9,12 +9,12 @@ function PublicLayout() {
   return (
     <div className={'page-holder'}>
       <div className={'wrapper'}>
-        </div>
         <Header />
         <div className={'main'}>
           <Outlet />
         </div>
         <ToastContainer />
+      </div>
       <Footer />
     </div>
   )

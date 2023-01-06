@@ -1,74 +1,56 @@
-import React, {useEffect, useState} from "react";
-import axios from "axios";
+import React from "react";
 import { useParams } from "react-router-dom";
 import { BallTriangle } from  'react-loader-spinner'
 
-import ImageBanner from "components/ImageBanner";
+import {useFetch} from 'hook/useFetch';
 
-import {URL_BEERS, BEERS_LOADING, BEERS_COMPLETE, BEERS_ERROR} from '../../../constants';
+import ImageBanner from "components/ImageBanner";
 
 import imageBanner from 'assets/images/image01.jpg';
 
 import './Post.scss';
+import * as Constants from 'constants';
 
 function Post() {
-  const [beer, setBeer] = useState({});
-  const [status, setStatus] = useState(BEERS_LOADING);
-
-  const getBeers = (params) => {
-    setStatus(BEERS_LOADING);
-    axios
-      .get(URL_BEERS, {
-        params: {...params}
-      })
-      .then( ({ data }) => {
-        setBeer(data[0]);
-        setStatus(BEERS_COMPLETE);
-      })
-      .catch((error) => {
-        setStatus(BEERS_ERROR);
-        console.log(error)
-      })
-  }
-
   const {id} = useParams();
-
-  useEffect(() => {
-    getBeers({
+  const {response, error, loading} = useFetch({
+    method: 'GET',
+    url: Constants.URL_BEERS,
+    params: {
       ids: id
-    })
-  }, [])
+    }
+  })
 
-  if (status === BEERS_ERROR) {
+  if (error || !loading && Array.isArray(response) && !response.length) {
     return (
-      <React.Fragment>
+      <>
         <ImageBanner image={imageBanner} />
         <div className='container'>
           <h1 style={{textAlign: 'center', margin: '50px 0'}}>Oops, something went wrong</h1>
         </div>
-      </React.Fragment>
+      </>
     )
   }
 
   return (
-    status === BEERS_LOADING
+    loading
       ? <BallTriangle
           color="#5458F7"
           wrapperStyle={{justifyContent: 'center'}}
         />
-      : <React.Fragment>
-          <ImageBanner image={imageBanner} title={beer.name} />
+      : <>
+          <ImageBanner image={imageBanner} title={response[0].name} />
           <div className="post-content">
             <div className="image-holder">
-              <img src={beer.image_url} alt={beer.name} />
+              <img src={response[0].image_url} alt={response[0].name} />
             </div>
             <div className="text-holder">
-              <p><strong>{beer.tagline}</strong></p>
-              <p>{beer.description}</p>
-              <blockquote>{beer.brewers_tips}</blockquote>
+              <p><strong>{response[0].tagline}</strong></p>
+              <p>{response[0].description}</p>
+              <blockquote>{response[0].brewers_tips}</blockquote>
             </div>
           </div>
-        </React.Fragment>
+        </>
   );
 }
 
