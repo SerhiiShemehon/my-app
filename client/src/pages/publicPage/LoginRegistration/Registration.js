@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 
 import {Form, Input} from 'components/Form';
-import notify from 'utils/notification.helpers'
 
 import './LoginRegistration.scss'
+import * as Constants from 'constants';
 
 function Registration() {
   const [contact, setContact] = useState({
@@ -15,9 +15,28 @@ function Registration() {
     confirmPassword: ''
   })
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    notify('Ok! Form sent')
+    const result = await (
+      await fetch(Constants.URL_REGISTRATION, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          email: contact.email,
+          password: contact.password,
+          confirmPassword: contact.confirmPassword,
+          firstName: contact.fmame,
+          lastName: contact.lmame
+        })
+      })
+    ).json();
+    if (result) {
+      console.log(result)
+    } else {
+      console.log('nothing')
+    }
   }
 
   const handleChange = (e) => {

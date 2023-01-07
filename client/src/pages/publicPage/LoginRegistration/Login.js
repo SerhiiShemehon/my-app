@@ -1,22 +1,35 @@
 import React, {useState} from 'react';
 
 import {Form, Input} from 'components/Form';
-import notify from 'utils/notification.helpers'
 
 import './LoginRegistration.scss'
+import * as Constants from 'constants';
 
 function Login() {
   const [contact, setContact] = useState({
-    fmame: '',
-    lmame: '',
     email: '',
-    phone: '',
-    message: ''
+    password: '',
   })
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    notify('Ok! Form sent')
+    const result = await (
+      await fetch(Constants.URL_LOGIN, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          email: contact.email,
+          password: contact.password,
+        })
+      })
+    ).json();
+    if (result) {
+      console.log(result)
+    } else {
+      console.log('nothing')
+    }
   }
 
   const handleChange = (e) => {
@@ -33,16 +46,16 @@ function Login() {
           <Form handleSubmit={handleSubmit}>
             <Input
               handleChange={handleChange}
-              type={'text'}
-              placeholder={'First Name'}
-              name={'fmame'}
+              type={'email'}
+              placeholder={'Email'}
+              name={'email'}
               required
               className={'col-12'} />
             <Input
               handleChange={handleChange}
-              type={'text'}
-              placeholder={'Last Name'}
-              name={'lmame'}
+              type={'password'}
+              placeholder={'Password'}
+              name={'password'}
               required
               className={'col-12'} />
             <button type={'submit'} className={'btn-second'}>Send</button>
