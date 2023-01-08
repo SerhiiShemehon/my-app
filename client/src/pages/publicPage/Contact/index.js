@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 
 import ImageBanner from 'components/ImageBanner';
 import {Form, Input, Textarea} from 'components/Form';
@@ -22,6 +22,10 @@ function Contact() {
     phone: '',
     message: ''
   })
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault()

@@ -1,15 +1,19 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
+import { useNavigate } from 'react-router-dom';
 
+import { AuthContext } from 'context/auth';
 import {Form, Input} from 'components/Form';
 
 import './LoginRegistration.scss'
 import * as Constants from 'constants';
 
 function Login() {
+  const context = useContext(AuthContext);
   const [contact, setContact] = useState({
     email: '',
     password: '',
-  })
+  });
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -26,7 +30,10 @@ function Login() {
       })
     ).json();
     if (result) {
-      console.log(result)
+      context.login(result)
+      setTimeout(()=> {
+        navigate('/dashboard');
+      },300)
     } else {
       console.log('nothing')
     }

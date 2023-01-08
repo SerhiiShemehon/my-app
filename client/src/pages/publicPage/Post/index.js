@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { useParams } from "react-router-dom";
 import { BallTriangle } from  'react-loader-spinner'
 
@@ -20,6 +20,10 @@ function Post() {
       ids: id
     }
   })
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   if (error || !loading && Array.isArray(response) && !response.length) {
     return (

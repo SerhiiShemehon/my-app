@@ -2,13 +2,13 @@ import React, {Suspense, useContext} from 'react';
 import { Link } from "react-router-dom";
 import Loading from 'components/Loading';
 import {NavItem, NavList} from 'components/Nav';
-import { UserContext } from 'context/userContext';
+import { AuthContext } from 'context/auth';
 import {MENU_DASHBOARD} from 'data';
 
 const AdminInfo = React.lazy(()=> import('components/AdminInfo/AdminInfo'));
 
 const DashboardSidebar = () => {
-  const user = useContext(UserContext);
+  const {user} = useContext(AuthContext);
   return (
     <div className={'dashboard-sidebar'}>
       <Suspense fallback={<Loading />}>

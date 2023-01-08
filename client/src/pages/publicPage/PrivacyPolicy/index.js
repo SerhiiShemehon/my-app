@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 
 import ImageBanner from 'components/ImageBanner';
 
@@ -6,6 +6,9 @@ import imageBanner from 'assets/images/image06.jpg';
 
 
 function PrivacyPolicy() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>

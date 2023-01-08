@@ -48,6 +48,7 @@ function Home() {
   }
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     getBeers({
       page,
       per_page: perPage

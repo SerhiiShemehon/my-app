@@ -1,11 +1,14 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
+import {useNavigate} from "react-router-dom";
 
+import { AuthContext } from 'context/auth';
 import {Form, Input} from 'components/Form';
 
 import './LoginRegistration.scss'
 import * as Constants from 'constants';
 
 function Registration() {
+  const context = useContext(AuthContext);
   const [contact, setContact] = useState({
     fmame: '',
     lmame: '',
@@ -14,6 +17,7 @@ function Registration() {
     password: '',
     confirmPassword: ''
   })
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -33,7 +37,10 @@ function Registration() {
       })
     ).json();
     if (result) {
-      console.log(result)
+      context.login(result)
+      setTimeout(()=> {
+        navigate('/dashboard');
+      },300)
     } else {
       console.log('nothing')
     }

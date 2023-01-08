@@ -1,7 +1,7 @@
 import React, {Suspense, useContext} from 'react';
 
 import Loading from 'components/Loading';
-import {UserContext} from 'context/userContext';
+import { AuthContext } from 'context/auth';
 
 import imageProfileBanner from 'assets/images/image05.jpg';
 import './Profile.scss'
@@ -10,7 +10,7 @@ const AdminInfoProfile = React.lazy(()=> import('components/AdminInfo/AdminInfoP
 
 
 function Profile() {
-  const user = useContext(UserContext);
+  const {user} = useContext(AuthContext);
   return (
     <>
       <h1 className={'dashboard-title'}>Profile</h1>

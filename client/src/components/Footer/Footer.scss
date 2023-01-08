@@ -26,6 +26,14 @@
       margin-bottom: 0;
     }
   }
+  a {
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+    &:hover {
+      opacity: 0.5;
+    }
+  }
 }
 .footer-nav {
   display: flex;

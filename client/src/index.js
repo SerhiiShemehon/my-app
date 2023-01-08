@@ -4,6 +4,7 @@ import {BrowserRouter} from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
 
 import { UserContext } from 'context/userContext';
+import { AuthProvider } from 'context/auth';
 import Router from 'routes/Router';
 import { USERS } from 'data';
 
@@ -11,9 +12,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <UserContext.Provider value={USERS[0]}>
+      <AuthProvider>
         <Router />
-      </UserContext.Provider>
+      </AuthProvider>
     </BrowserRouter>
   </React.StrictMode>
 );

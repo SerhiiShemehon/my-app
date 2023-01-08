@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import Logo from 'components/Logo';
 import {NavGroup, NavItem, NavList} from 'components/Nav';
@@ -15,7 +16,7 @@ function Footer() {
         <FooterInfo>
           <Logo />
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          <p className={'copyright'}>©My-app 2022. All rights reserved</p>
+          <p className={'copyright'}>©My-app 2022. All rights reserved | <Link to={'/privacy-policy'}>Privacy Policy</Link></p>
         </FooterInfo>
         <FooterNav>
           <NavGroup title={'Top Category'}>
