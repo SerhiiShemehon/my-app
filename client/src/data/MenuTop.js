@@ -6,8 +6,8 @@ const MENU_TOP = [
   },
   {
     id: 2,
-    title: 'Item',
-    link: '/about'
+    title: 'Other',
+    link: '/other'
   },
   {
     id: 3,

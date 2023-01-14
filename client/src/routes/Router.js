@@ -2,7 +2,7 @@ import React, {useContext} from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 import { PublicLayout, PrivateLayout } from 'layouts';
-import { Home, Contact, Post, NoMatch, Login, Registration, PrivacyPolicy } from 'pages/publicPage';
+import { Home, Contact, Post, NoMatch, Login, Registration, PrivacyPolicy, Other } from 'pages/publicPage';
 import { Dashboard, Posts, Tasks, Profile, PrivatPrivacyPolicy } from 'pages/privatePage';
 import { AuthContext } from 'context/auth';
 
@@ -18,6 +18,7 @@ function Router() {
         <Route path='/contact' element={<Contact />} />
         <Route path='/login' element={<Login />} />
         <Route path='/registration' element={<Registration />} />
+        <Route path='/other' element={<Other />} />
         {!user ? <Route path='/privacy-policy' element={<PrivacyPolicy />} /> : null }
         <Route path='*' element={<NoMatch />} />
       </Route>
