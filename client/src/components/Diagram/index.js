@@ -4,8 +4,8 @@ import TinyBarChart from './TinyBarChart';
 import LineBarAreaComposedChart from './LineBarAreaComposedChart';
 
 export {
-  StackedAreaChart,
-  SimpleLineChart,
-  TinyBarChart,
-  LineBarAreaComposedChart
-}
+    StackedAreaChart,
+    SimpleLineChart,
+    TinyBarChart,
+    LineBarAreaComposedChart,
+};

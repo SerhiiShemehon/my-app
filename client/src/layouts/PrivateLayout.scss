@@ -1,52 +1,52 @@
 .page-holder {
-  &.dashboard-holder {
-    background: #1B1D21;
-    color: #C1C6DB;
-    .header,
-    .footer {
-      background: #1B1D21;
+    &.dashboard-holder {
+        background: #1b1d21;
+        color: #c1c6db;
+        .header,
+        .footer {
+            background: #1b1d21;
+        }
+        .main {
+            display: flex;
+            justify-content: space-between;
+        }
     }
-    .main {
-      display: flex;
-      justify-content: space-between;
-    }
-  }
 }
 
 .dashboard-sidebar {
-  background: #262835;
-  border-radius: 20px;
-  padding: 38px 34px;
-  width: 100%;
-  max-width: 390px;
-  a {
-    text-decoration: none;
-  }
+    background: #262835;
+    border-radius: 20px;
+    padding: 38px 34px;
+    width: 100%;
+    max-width: 390px;
+    a {
+        text-decoration: none;
+    }
 }
 
 .dashboard-content {
-  background: #262835;
-  border-radius: 20px;
-  padding: 64px;
-  width: 100%;
-  max-width: calc(100% - 490px);
-  &:only-child {
-    max-width: 100%;
-  }
+    background: #262835;
+    border-radius: 20px;
+    padding: 64px;
+    width: 100%;
+    max-width: calc(100% - 490px);
+    &:only-child {
+        max-width: 100%;
+    }
 }
 .dashboard-header {
-  margin: 0 0 50px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  .dashboard-title {
-    margin: 0;
-  }
+    margin: 0 0 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .dashboard-title {
+        margin: 0;
+    }
 }
 .dashboard-title {
-  font-weight: 600;
-  font-size: 32px;
-  line-height: 1.2;
-  margin: 0 0 50px;
-  letter-spacing: -0.02em;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 1.2;
+    margin: 0 0 50px;
+    letter-spacing: -0.02em;
 }

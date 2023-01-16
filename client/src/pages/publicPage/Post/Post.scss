@@ -1,24 +1,24 @@
 .post-content {
-  display: flex;
-  max-width: 900px;
-  padding: 0 20px;
-  margin: 50px auto;
-  .image-holder {
-    width: 100%;
-    max-width: 30%;
-    img {
-      max-width: 150px;
+    display: flex;
+    max-width: 900px;
+    padding: 0 20px;
+    margin: 50px auto;
+    .image-holder {
+        width: 100%;
+        max-width: 30%;
+        img {
+            max-width: 150px;
+        }
     }
-  }
-  .text-holder {
-    width: 100%;
-    max-width: 70%;
-  }
-  blockquote {
-    display: block;
-    position: relative;
-    margin: 50px 0;
-    padding: 25px 50px;
-    border-left: 4px solid #fff;
-  }
+    .text-holder {
+        width: 100%;
+        max-width: 70%;
+    }
+    blockquote {
+        display: block;
+        position: relative;
+        margin: 50px 0;
+        padding: 25px 50px;
+        border-left: 4px solid #fff;
+    }
 }

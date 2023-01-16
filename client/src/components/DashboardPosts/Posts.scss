@@ -1,189 +1,191 @@
 .dashboard-content {
-  .post-list {
-    line-height: 1;
-    display: flex;
-    flex-direction: column;
-  }
-  .post-header,
-  .post-item {
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: #FFFFFF;
-    border: 1px solid #E6E7E9;
-    border-radius: 8px;
-    padding: 20px;
-    &>span,
-    &>div {
-      width: 100%;
-      &:last-child {
-        width: 72px;
-        flex-shrink: 0;
-      }
+    .post-list {
+        line-height: 1;
+        display: flex;
+        flex-direction: column;
     }
-  }
-  .post-header {
-    padding: 14px 20px;
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 1.4;
-    letter-spacing: -0.02em;
-    color: rgba(24, 24, 25, 0.7);
-  }
-  .post-item {
-    font-size: 14px;
-    line-height: 1.4;
-    font-weight: 700;
-    letter-spacing: -0.03em;
-    color: rgba(24, 24, 25, 0.9);
-    .status-block,
-    .date-block {
-      font-size: 12px;
-      padding: 4px 12px;
-      background: rgba(86, 87, 88, 0.12);
-      border-radius: 12px;
-      &.status-publish {
-        color: #8C18E2;
-        background: #F2E7FC;
-      }
-      &.status-future {
-        color: #17BE1E;
-        background: #CBFFB3;
-      }
-      &.status-draft {
-        color: #2AABBC;
-        background: #B0ECFF;
-      }
-    }
-    button {
-      background: transparent;
-      padding: 0;
-      border: none;
-      cursor: pointer;
-    }
-    .setting-block {
-      position: relative;
-      .opener-setting {
-        height: 20px;
-        width: 20px;
-        margin: 0 auto;
+    .post-header,
+    .post-item {
+        margin-bottom: 20px;
         display: flex;
         align-items: center;
-        justify-content: center;
-      }
-      .setting-holder {
-        position: absolute;
-        top: -20px;
-        right: calc(100% - 10px);
-        background: #EBEBEB;
-        border-radius: 10px;
-        padding: 15px;
-        width: 97px;
-        filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.25));
-        &:after {
-          content: '';
-          position: absolute;
-          top: 21px;
-          left: 100%;
-          width: 0;
-          height: 0;
-          border-left: 15px solid #EBEBEB;
-          border-top: 9px solid transparent;
-          border-bottom: 9px solid transparent;
+        justify-content: space-between;
+        background: #ffffff;
+        border: 1px solid #e6e7e9;
+        border-radius: 8px;
+        padding: 20px;
+        & > span,
+        & > div {
+            width: 100%;
+            &:last-child {
+                width: 72px;
+                flex-shrink: 0;
+            }
+        }
+    }
+    .post-header {
+        padding: 14px 20px;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 1.4;
+        letter-spacing: -0.02em;
+        color: rgba(24, 24, 25, 0.7);
+    }
+    .post-item {
+        font-size: 14px;
+        line-height: 1.4;
+        font-weight: 700;
+        letter-spacing: -0.03em;
+        color: rgba(24, 24, 25, 0.9);
+        .status-block,
+        .date-block {
+            font-size: 12px;
+            padding: 4px 12px;
+            background: rgba(86, 87, 88, 0.12);
+            border-radius: 12px;
+            &.status-publish {
+                color: #8c18e2;
+                background: #f2e7fc;
+            }
+            &.status-future {
+                color: #17be1e;
+                background: #cbffb3;
+            }
+            &.status-draft {
+                color: #2aabbc;
+                background: #b0ecff;
+            }
         }
         button {
-          display: block;
-          text-align: left;
-          margin-bottom: 7px;
-          &:last-child {
-            margin-bottom: 0;
-          }
+            background: transparent;
+            padding: 0;
+            border: none;
+            cursor: pointer;
         }
-      }
+        .setting-block {
+            position: relative;
+            .opener-setting {
+                height: 20px;
+                width: 20px;
+                margin: 0 auto;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .setting-holder {
+                position: absolute;
+                top: -20px;
+                right: calc(100% - 10px);
+                background: #ebebeb;
+                border-radius: 10px;
+                padding: 15px;
+                width: 97px;
+                filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.25));
+                &:after {
+                    content: '';
+                    position: absolute;
+                    top: 21px;
+                    left: 100%;
+                    width: 0;
+                    height: 0;
+                    border-left: 15px solid #ebebeb;
+                    border-top: 9px solid transparent;
+                    border-bottom: 9px solid transparent;
+                }
+                button {
+                    display: block;
+                    text-align: left;
+                    margin-bottom: 7px;
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
     }
-  }
 
-  .no-post {
-    margin-bottom: 50px;
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 1.4;
-  }
+    .no-post {
+        margin-bottom: 50px;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 1.4;
+    }
 }
 
 .post-form {
-  .title-block {
-    margin: 0 0 50px;
-    font-weight: 500;
-    font-size: 42px;
-    line-height: 1.2;
-    color: #DADADA;
-    text-align: center;
-  }
-  form {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  input, textarea, select {
-    width: 100%;
-    background: #BDB2FF;
-    border: 1px solid #BDB2FF;
-    border-radius: 8px;
-    padding: 19px 34px;
-    font-size: 18px;
-    line-height: 1.4;
-    font-weight: 700;
-    letter-spacing: -0.03em;
-    color: rgba(24, 24, 25, 0.9);
-    outline: none;
-    margin-bottom: 40px;
-    color: #262835;
-    &.col-6 {
-      width: calc(50% - 19px);
+    .title-block {
+        margin: 0 0 50px;
+        font-weight: 500;
+        font-size: 42px;
+        line-height: 1.2;
+        color: #dadada;
+        text-align: center;
     }
-  }
-  input::placeholder {
-    color: #262835;
-  }
-  textarea::placeholder {
-    color: #262835;
-  }
-  textarea {
-    min-height: 227px;
-    height: 227px;
-    min-width: 100%;
-    max-width: 100%;
-  }
-  select {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    background-position: calc(100% - 40px) 50%;
-    background-repeat: no-repeat;
-    background-size: 12px;
-    background-image: url("../../assets/icons/chevron-down-black.svg");
-    text-transform: capitalize;
-  }
-  .btn-second{
-    background: #BDB2FF;
-    border: 1px solid #BDB2FF;
-    border-radius: 8px;
-    padding: 19px;
-    font-size: 14px;
-    line-height: 1.4;
-    font-weight: 700;
-    letter-spacing: -0.03em;
-    color: #262835;
-    min-width: 192px;
-    cursor: pointer;
-    transition: 0.3s;
-    text-transform: uppercase;
-    margin: 0 auto;
-    &:hover {
-      background: darken(#BDB2FF, 10%);
-      border-color: darken(#BDB2FF, 10%);
+    form {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
     }
-  }
+    input,
+    textarea,
+    select {
+        width: 100%;
+        background: #bdb2ff;
+        border: 1px solid #bdb2ff;
+        border-radius: 8px;
+        padding: 19px 34px;
+        font-size: 18px;
+        line-height: 1.4;
+        font-weight: 700;
+        letter-spacing: -0.03em;
+        color: rgba(24, 24, 25, 0.9);
+        outline: none;
+        margin-bottom: 40px;
+        color: #262835;
+        &.col-6 {
+            width: calc(50% - 19px);
+        }
+    }
+    input::placeholder {
+        color: #262835;
+    }
+    textarea::placeholder {
+        color: #262835;
+    }
+    textarea {
+        min-height: 227px;
+        height: 227px;
+        min-width: 100%;
+        max-width: 100%;
+    }
+    select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background-position: calc(100% - 40px) 50%;
+        background-repeat: no-repeat;
+        background-size: 12px;
+        background-image: url('../../assets/icons/chevron-down-black.svg');
+        text-transform: capitalize;
+    }
+    .btn-second {
+        background: #bdb2ff;
+        border: 1px solid #bdb2ff;
+        border-radius: 8px;
+        padding: 19px;
+        font-size: 14px;
+        line-height: 1.4;
+        font-weight: 700;
+        letter-spacing: -0.03em;
+        color: #262835;
+        min-width: 192px;
+        cursor: pointer;
+        transition: 0.3s;
+        text-transform: uppercase;
+        margin: 0 auto;
+        &:hover {
+            background: darken(#bdb2ff, 10%);
+            border-color: darken(#bdb2ff, 10%);
+        }
+    }
 }

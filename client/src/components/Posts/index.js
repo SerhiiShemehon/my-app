@@ -5,4 +5,11 @@ import PostItem from './PostItem';
 import PostItemBig from './PostItemBig';
 import PostPagination from './PostPagination';
 
-export {PostWrapper, PostFilter, PostList, PostItem, PostItemBig, PostPagination};
+export {
+    PostWrapper,
+    PostFilter,
+    PostList,
+    PostItem,
+    PostItemBig,
+    PostPagination,
+};

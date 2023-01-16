@@ -8,19 +8,19 @@ import DataStackedAreaChart from './DataStackedAreaChart';
 import DataSimpleLineChart from './DataSimpleLineChart';
 import DataTinyBarChart from './DataTinyBarChart';
 import DataLineBarAreaComposedChart from './DataLineBarAreaComposedChart';
-import {OPTIONS_ABV, OPTIONS_IBU} from './Filter';
+import { OPTIONS_ABV, OPTIONS_IBU } from './Filter';
 
 export {
-  MENU_TOP,
-  CATEGORY,
-  TAG,
-  MENU_FOOTER,
-  USERS,
-  MENU_DASHBOARD,
-  DataStackedAreaChart,
-  DataTinyBarChart,
-  DataLineBarAreaComposedChart,
-  DataSimpleLineChart,
-  OPTIONS_ABV,
-  OPTIONS_IBU
+    MENU_TOP,
+    CATEGORY,
+    TAG,
+    MENU_FOOTER,
+    USERS,
+    MENU_DASHBOARD,
+    DataStackedAreaChart,
+    DataTinyBarChart,
+    DataLineBarAreaComposedChart,
+    DataSimpleLineChart,
+    OPTIONS_ABV,
+    OPTIONS_IBU,
 };

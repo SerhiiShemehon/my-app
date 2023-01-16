@@ -4,16 +4,15 @@ import Contact from './Contact';
 import NoMatch from './NoMatch';
 import PrivacyPolicy from './PrivacyPolicy';
 import Other from './Other';
-import {Login, Registration} from './LoginRegistration';
-
+import { Login, Registration } from './LoginRegistration';
 
 export {
-  Home,
-  Contact,
-  Post,
-  NoMatch,
-  Login,
-  Registration,
-  PrivacyPolicy,
-  Other
+    Home,
+    Contact,
+    Post,
+    NoMatch,
+    Login,
+    Registration,
+    PrivacyPolicy,
+    Other,
 };

@@ -4,10 +4,4 @@ import Tasks from './Tasks';
 import Profile from './Profile';
 import PrivatPrivacyPolicy from './PrivatPrivacyPolicy';
 
-export {
-  Dashboard,
-  Posts,
-  Tasks,
-  Profile,
-  PrivatPrivacyPolicy
-};
+export { Dashboard, Posts, Tasks, Profile, PrivatPrivacyPolicy };

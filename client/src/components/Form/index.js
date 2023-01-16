@@ -3,4 +3,4 @@ import Input from './Input';
 import Textarea from './Textarea';
 import Select from './Select';
 
-export {Form, Input, Textarea, Select};
+export { Form, Input, Textarea, Select };

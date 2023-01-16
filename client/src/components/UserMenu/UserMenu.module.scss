@@ -1,76 +1,73 @@
 .menu {
-  position: relative;
-  &:hover {
-    .dropdown {
-      opacity: 1;
-      visibility: visible;
+    position: relative;
+    &:hover {
+        .dropdown {
+            opacity: 1;
+            visibility: visible;
+        }
     }
-  }
 }
 
 .link {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  color: #fff;
-  font-size: 18px;
-  font-weight: 700;
-  transition: 0.3s;
-  &:hover {
-    opacity: 0.5;
-  }
-  svg {
-    width: 23px;
-    height: 23px;
-    margin-right: 15px;
-  }
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    transition: 0.3s;
+    &:hover {
+        opacity: 0.5;
+    }
+    svg {
+        width: 23px;
+        height: 23px;
+        margin-right: 15px;
+    }
 }
 .dropdown {
-  opacity: 0;
-  visibility: hidden;
-  position: absolute;
-  top: calc(100% + 20px);
-  right: 0;
-  padding: 15px 20px 25px;
-  min-width: 186px;
-  background: #303033;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 10px;
-  &:before {
-    content: '';
+    opacity: 0;
+    visibility: hidden;
     position: absolute;
-    bottom: 100%;
-    top: -20px;
-    left: 0;
+    top: calc(100% + 20px);
     right: 0;
-  }
-  ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    line-height: 1;
-  }
-  li {
-    margin-bottom: 8px;
-    &:last-child {
-      margin-bottom: 0;
+    padding: 15px 20px 25px;
+    min-width: 186px;
+    background: #303033;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    &:before {
+        content: '';
+        position: absolute;
+        bottom: 100%;
+        top: -20px;
+        left: 0;
+        right: 0;
     }
-  }
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        line-height: 1;
+    }
+    li {
+        margin-bottom: 8px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
 }
 .sublink {
-  cursor: pointer;
-  font-weight: 300;
-  font-size: 12px;
-  text-decoration: none;
-  color: #fff;
-  transition: 0.3s;
-  background: transparent;
-  border: none;
-  padding: 0;
-  &:hover {
-    opacity: 0.5;
-  }
+    cursor: pointer;
+    font-weight: 300;
+    font-size: 12px;
+    text-decoration: none;
+    color: #fff;
+    transition: 0.3s;
+    background: transparent;
+    border: none;
+    padding: 0;
+    &:hover {
+        opacity: 0.5;
+    }
 }
-
-
-

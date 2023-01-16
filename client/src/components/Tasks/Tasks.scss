@@ -1,150 +1,150 @@
 .task-list {
-  margin-bottom: 50px;
-  line-height: 1;
-  display: flex;
-  flex-direction: column;
-  .task-form {
-    margin-bottom: 20px;
-    order: 1;
-    input {
-      width: calc(100% - 219px);
+    margin-bottom: 50px;
+    line-height: 1;
+    display: flex;
+    flex-direction: column;
+    .task-form {
+        margin-bottom: 20px;
+        order: 1;
+        input {
+            width: calc(100% - 219px);
+        }
     }
-  }
 }
 .task-item {
-  margin-bottom: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: #FFFFFF;
-  border: 1px solid #E6E7E9;
-  border-radius: 8px;
-  padding: 20px;
-  order: 1;
-  &.task-completed {
-    background: #FFFBE8;
-    border: 1px solid #FFFBE8;
-    .status-block {
-      path {
-        &[fill]{
-          fill: #FFD700;
-        }
-        &[stroke] {
-          stroke: #FFD700;
-        }
-      }
-    }
-  }
-  &.task-pinned {
-    order: 0;
-    .pinned-block {
-      path {
-        &[fill]{
-          fill: #FFD700;
-        }
-        &[stroke] {
-          stroke: #FFD700;
-        }
-      }
-    }
-  }
-  button {
-    padding: 0;
-    margin: 0;
-    border: none;
-    background: transparent;
-    cursor: pointer;
-    path {
-      transition: 0.3s;
-    }
-    &:hover {
-      path {
-        &[fill]{
-          fill: #FFD700;
-        }
-        &[stroke] {
-          stroke: #FFD700;
-        }
-      }
-    }
-  }
-  .title-block {
-    width: 100%;
-    margin: 0 20px 0 0;
-    font-size: 14px;
-    line-height: 1.4;
-    font-weight: 700;
-    letter-spacing: -0.03em;
-    color: rgba(24, 24, 25, 0.9);
-  }
-  .status-block {
-    flex-shrink: 0;
-    width: 22px;
-    margin-right: 20px;
-  }
-  .setting-block {
+    margin-bottom: 20px;
     display: flex;
-    button {
-      height: 20px;
-      width: 20px;
-      margin-right: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      &:last-child {
-        margin-right: 0;
-      }
+    align-items: center;
+    justify-content: space-between;
+    background: #ffffff;
+    border: 1px solid #e6e7e9;
+    border-radius: 8px;
+    padding: 20px;
+    order: 1;
+    &.task-completed {
+        background: #fffbe8;
+        border: 1px solid #fffbe8;
+        .status-block {
+            path {
+                &[fill] {
+                    fill: #ffd700;
+                }
+                &[stroke] {
+                    stroke: #ffd700;
+                }
+            }
+        }
     }
-  }
+    &.task-pinned {
+        order: 0;
+        .pinned-block {
+            path {
+                &[fill] {
+                    fill: #ffd700;
+                }
+                &[stroke] {
+                    stroke: #ffd700;
+                }
+            }
+        }
+    }
+    button {
+        padding: 0;
+        margin: 0;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        path {
+            transition: 0.3s;
+        }
+        &:hover {
+            path {
+                &[fill] {
+                    fill: #ffd700;
+                }
+                &[stroke] {
+                    stroke: #ffd700;
+                }
+            }
+        }
+    }
+    .title-block {
+        width: 100%;
+        margin: 0 20px 0 0;
+        font-size: 14px;
+        line-height: 1.4;
+        font-weight: 700;
+        letter-spacing: -0.03em;
+        color: rgba(24, 24, 25, 0.9);
+    }
+    .status-block {
+        flex-shrink: 0;
+        width: 22px;
+        margin-right: 20px;
+    }
+    .setting-block {
+        display: flex;
+        button {
+            height: 20px;
+            width: 20px;
+            margin-right: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
 }
 
 .no-tasks {
-  margin-bottom: 50px;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 1.4;
+    margin-bottom: 50px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.4;
 }
 
 .task-form {
-  position: relative;
-  .error-input {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    font-size: 14px;
-    color: red;
-  }
-  input {
-    width: 50%;
-    background: #FFFFFF;
-    border: 1px solid #E6E7E9;
-    border-radius: 8px;
-    padding: 19px 34px;
-    font-size: 14px;
-    line-height: 1.4;
-    font-weight: 700;
-    letter-spacing: -0.03em;
-    color: rgba(24, 24, 25, 0.9);
-    margin-right: 27px;
-    outline: none;
-  }
-  [type='submit']{
-    background: #BDB2FF;
-    border: 1px solid #BDB2FF;
-    border-radius: 8px;
-    padding: 19px;
-    font-size: 14px;
-    line-height: 1.4;
-    font-weight: 700;
-    letter-spacing: -0.03em;
-    color: #262835;
-    min-width: 192px;
-    cursor: pointer;
-    transition: 0.3s;
-    text-transform: uppercase;
-    &:hover {
-      background: darken(#BDB2FF, 10%);
-      border-color: darken(#BDB2FF, 10%);
+    position: relative;
+    .error-input {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        font-size: 14px;
+        color: red;
     }
-  }
+    input {
+        width: 50%;
+        background: #ffffff;
+        border: 1px solid #e6e7e9;
+        border-radius: 8px;
+        padding: 19px 34px;
+        font-size: 14px;
+        line-height: 1.4;
+        font-weight: 700;
+        letter-spacing: -0.03em;
+        color: rgba(24, 24, 25, 0.9);
+        margin-right: 27px;
+        outline: none;
+    }
+    [type='submit'] {
+        background: #bdb2ff;
+        border: 1px solid #bdb2ff;
+        border-radius: 8px;
+        padding: 19px;
+        font-size: 14px;
+        line-height: 1.4;
+        font-weight: 700;
+        letter-spacing: -0.03em;
+        color: #262835;
+        min-width: 192px;
+        cursor: pointer;
+        transition: 0.3s;
+        text-transform: uppercase;
+        &:hover {
+            background: darken(#bdb2ff, 10%);
+            border-color: darken(#bdb2ff, 10%);
+        }
+    }
 }

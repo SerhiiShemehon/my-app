@@ -1,124 +1,126 @@
 @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;600;700&display=swap');
 
-*, *:before, *:after {
-  box-sizing: border-box;
-  font-family: 'Mulish', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-  sans-serif;
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    font-family: 'Mulish', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+        'Helvetica Neue', sans-serif;
 }
 html {
-  height: 100%;
+    height: 100%;
 }
-body, #root {
-  height: 100%;
+body,
+#root {
+    height: 100%;
 }
 
 body {
-  margin: 0;
-  font-family: 'Mulish', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-  sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    font-family: 'Mulish', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+        'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-  monospace;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+        monospace;
 }
 #root {
-  height: 100%;
+    height: 100%;
 }
 .page-holder {
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  overflow-x: hidden;
-  font-size: 16px;
-  font-weight: 300;
-  line-height: 1.75;
-  background: #131313;
-  color: #fff;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-x: hidden;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.75;
+    background: #131313;
+    color: #fff;
 }
 
 .container {
-  width: 100%;
-  max-width: 1240px;
-  padding: 0 20px;
-  margin: 0 auto;
-  &.container-big {
-    max-width: 1640px;
-  }
+    width: 100%;
+    max-width: 1240px;
+    padding: 0 20px;
+    margin: 0 auto;
+    &.container-big {
+        max-width: 1640px;
+    }
 }
 .text-page {
-  padding: 60px 0;
+    padding: 60px 0;
 }
 
-
 .btn {
-  font-size: 12px;
-  line-height: 1;
-  font-weight: 600;
-  padding: 8px 20px;
-  background: #5458F7;
-  color: #fff;
-  border-radius: 16px;
-  cursor: pointer;
-  transition: 0.3s;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  &:hover {
-    background: darken(#5458F7, 15);
-  }
-  &.btn-big {
-    font-size: 16px;
-    font-weight: 400;
-    padding: 11px 20px;
-    border-radius: 21px;
-  }
-  svg {
-    margin-left: 14px;
-    display: inline-block;
-    vertical-align: middle;
-  }
+    font-size: 12px;
+    line-height: 1;
+    font-weight: 600;
+    padding: 8px 20px;
+    background: #5458f7;
+    color: #fff;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    &:hover {
+        background: darken(#5458f7, 15);
+    }
+    &.btn-big {
+        font-size: 16px;
+        font-weight: 400;
+        padding: 11px 20px;
+        border-radius: 21px;
+    }
+    svg {
+        margin-left: 14px;
+        display: inline-block;
+        vertical-align: middle;
+    }
 }
 
 .btn-second {
-  font-size: 18px;
-  line-height: 1.2;
-  font-weight: 600;
-  background: #303033;
-  color: #fff;
-  padding: 15px 20px 14px;
-  border-radius: 40px;
-  cursor: pointer;
-  transition: 0.3s;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border: none;
-  min-width: 233px;
-  &:hover {
-    background: darken(#303033, 15);
-  }
+    font-size: 18px;
+    line-height: 1.2;
+    font-weight: 600;
+    background: #303033;
+    color: #fff;
+    padding: 15px 20px 14px;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    min-width: 233px;
+    &:hover {
+        background: darken(#303033, 15);
+    }
 }
 
 .btn-icon {
-  width: 48px;
-  height: 48px;
-  background: #fff;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 5px;
-  display: inline-block;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  svg {
-    width: 29px;
-    height: 29px;
-  }
+    width: 48px;
+    height: 48px;
+    background: #fff;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    svg {
+        width: 29px;
+        height: 29px;
+    }
 }

@@ -1,4 +1,4 @@
-import TaskList from './TaskList'
-import TasksForm from './TasksForm'
+import TaskList from './TaskList';
+import TasksForm from './TasksForm';
 
-export {TaskList, TasksForm};
+export { TaskList, TasksForm };
