@@ -4,7 +4,8 @@ import Contact from './Contact';
 import NoMatch from './NoMatch';
 import PrivacyPolicy from './PrivacyPolicy';
 import Other from './Other';
-import { Login, Registration } from './LoginRegistration';
+import Login from './Login';
+import Registration from './Registration';
 
 export {
     Home,

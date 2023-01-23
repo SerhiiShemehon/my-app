@@ -17,6 +17,7 @@ import {
     Posts,
     Tasks,
     Profile,
+    Settings,
     PrivatPrivacyPolicy,
 } from '../pages/privatePage';
 import { AuthContext } from '../context/auth';
@@ -45,6 +46,7 @@ function Router() {
                     <Route path="/posts" element={<Posts />} />
                     <Route path="/tasks" element={<Tasks />} />
                     <Route path="/profile" element={<Profile />} />
+                    <Route path="/settings" element={<Settings />} />
                     <Route
                         path="/privacy-policy"
                         element={<PrivatPrivacyPolicy />}

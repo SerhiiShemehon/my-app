@@ -4,4 +4,46 @@
     background-size: cover;
     background-position: 50% 50%;
     border-radius: 20px;
+    margin-bottom: 40px;
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.profile-form {
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+    input {
+        width: 100%;
+        margin-bottom: 41px;
+        padding: 20px 42px 19px;
+        background: rgba(48, 48, 51, 0.7);
+        border-radius: 10px;
+        border: none;
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 1.27;
+        color: #fff;
+        &::-webkit-input-placeholder {
+            color: #fff;
+        }
+        &::-moz-placeholder {
+            opacity: 1;
+            color: #fff;
+        }
+        &:-moz-placeholder {
+            color: #fff;
+        }
+        &:-ms-input-placeholder {
+            color: #fff;
+        }
+        &.placeholder {
+            color: #fff;
+        }
+    }
+    .btn-second {
+        margin: 0 auto;
+    }
 }

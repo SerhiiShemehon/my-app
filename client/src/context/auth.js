@@ -19,7 +19,7 @@ if (localStorage.getItem('jwtDecode')) {
 
 const AuthContext = createContext({
     user: null,
-    login: (userData) => {},
+    login: () => {},
     logout: () => {},
 });
 
@@ -34,6 +34,11 @@ function authReducer(state, action) {
             return {
                 ...state,
                 user: null,
+            };
+        case 'UPDATE':
+            return {
+                ...state,
+                user: action.payload,
             };
         default:
             return state;
@@ -60,9 +65,18 @@ function AuthProvider(props) {
         });
     }
 
+    function updateUser(userData) {
+        localStorage.removeItem('userData');
+        localStorage.setItem('userData', JSON.stringify(userData));
+        dispatch({
+            type: 'UPDATE',
+            payload: userData,
+        });
+    }
+
     return (
         <AuthContext.Provider
-            value={{ user: state.user, login, logout }}
+            value={{ user: state.user, login, logout, updateUser }}
             {...props}
         />
     );

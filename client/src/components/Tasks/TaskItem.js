@@ -11,13 +11,13 @@ const TaskItem = ({ task, updateTasks, removeTasks }) => {
     const [title, setTitle] = useState('');
 
     useEffect(() => {
-        setTitle(task.title);
+        setTitle(task.task);
     }, [task]);
 
     const editTasks = (e) => {
         e.preventDefault();
         setEdit(false);
-        updateTasks(e, task.id, 'edit', title);
+        updateTasks(e, task._id, 'edit', title);
     };
 
     const handleChange = (e) => {
@@ -26,22 +26,22 @@ const TaskItem = ({ task, updateTasks, removeTasks }) => {
 
     return !edit ? (
         <div
-            className={`task-item ${task.status ? 'task-completed' : null} ${
+            className={`task-item ${task.completed ? 'task-completed' : null} ${
                 task.pinned ? 'task-pinned' : null
             }`}
-            id={task.id}
+            id={task._id}
         >
             <button
                 className="status-block"
-                onClick={(e) => updateTasks(e, task.id, 'status')}
+                onClick={(e) => updateTasks(e, task._id, 'completed')}
             >
                 <Star />
             </button>
-            <h2 className="title-block">{task.title}</h2>
+            <h2 className="title-block">{task.task}</h2>
             <div className="setting-block">
                 <button
                     className="pinned-block"
-                    onClick={(e) => updateTasks(e, task.id, 'pinned')}
+                    onClick={(e) => updateTasks(e, task._id, 'pinned')}
                 >
                     <Pin />
                 </button>
@@ -50,7 +50,7 @@ const TaskItem = ({ task, updateTasks, removeTasks }) => {
                 </button>
                 <button
                     className="remove-block"
-                    onClick={(e) => removeTasks(e, task.id)}
+                    onClick={(e) => removeTasks(e, task._id)}
                 >
                     <Circle />
                 </button>
