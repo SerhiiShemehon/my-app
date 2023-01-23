@@ -8,14 +8,14 @@ const PostsList = ({ posts, updatePosts, removePosts }) => {
         <div className={'post-list'}>
             <div className={'post-header'}>
                 <span>Post</span>
-                <span>Status</span>
-                <span>Date</span>
-                <span>Author</span>
+                <span>Slug</span>
+                <span>Tag</span>
+                <span>Categories</span>
                 <span />
             </div>
             {posts.map((post) => (
                 <PostsItem
-                    key={post.id}
+                    key={post._id}
                     post={post}
                     updatePosts={updatePosts}
                     removePosts={removePosts}

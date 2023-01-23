@@ -1,14 +1,14 @@
-import { Form, Input, Select, Textarea } from '../Form';
+import { Form, Input, Textarea } from '../Form';
 
 const PostsForm = ({ addedPosts, closeModal }) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         addedPosts({
             title: e.target[0].value,
-            description: e.target[4].value,
-            status: e.target[2].value,
-            date: e.target[3].value,
-            author: e.target[1].value,
+            body: e.target[4].value,
+            categories: e.target[2].value,
+            tag: e.target[3].value,
+            slug: e.target[1].value
         });
         closeModal();
     };
@@ -26,25 +26,26 @@ const PostsForm = ({ addedPosts, closeModal }) => {
                 />
                 <Input
                     type="text"
-                    placeholder="Author"
-                    name="author"
+                    placeholder="Slug"
+                    name="slug"
                     required
-                    className="col-6"
-                />
-                <Select
-                    name="status"
-                    options={['Publish', 'Future', 'Draft']}
-                    firstOption="Status"
                     className="col-6"
                 />
                 <Input
+                  type="text"
+                  placeholder="Categories"
+                  name="categories"
+                  required
+                  className="col-6"
+                />
+                <Input
                     type="text"
-                    placeholder="Date"
-                    name="date"
+                    placeholder="Tag"
+                    name="tag"
                     required
                     className="col-6"
                 />
-                <Textarea placeholder="Body" required name="description" />
+                <Textarea placeholder="Body" required name="body" />
                 <button type="submit" className="btn-second">
                     Submit
                 </button>

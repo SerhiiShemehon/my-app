@@ -3,7 +3,6 @@ import React, { useState, useEffect, Suspense } from "react";
 import { TasksForm } from "../../../components/Tasks";
 import Loading from "../../../components/Loading";
 import * as Constants from "../../../constants";
-import { URL_TASK_BASE } from "../../../constants";
 
 const TaskList = React.lazy(() => import("../../../components/Tasks/TaskList"));
 

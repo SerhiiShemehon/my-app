@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Form, Input, Select, Textarea } from '../Form';
+import { Form, Input, Textarea } from '../Form';
 
 const UpdatePostsForm = ({ post, updatePosts, closeModal }) => {
     const [currentPost, setCurrentPost] = useState({});
@@ -7,20 +7,20 @@ const UpdatePostsForm = ({ post, updatePosts, closeModal }) => {
     useEffect(() => {
         setCurrentPost({
             title: post.title,
-            description: post.description,
-            status: post.status,
-            date: post.date,
-            author: post.author,
+            body: post.body,
+            categories: post.categories,
+            tag: post.tag,
+            slug: post.slug,
         });
     }, [post]);
 
     const handleSubmit = (e) => {
-        updatePosts(e, post.id, {
+        updatePosts(e, post._id, {
             title: e.target[0].value,
-            description: e.target[4].value,
-            status: e.target[2].value,
-            date: e.target[3].value,
-            author: e.target[1].value,
+            body: e.target[4].value,
+            categories: e.target[2].value,
+            tag: e.target[3].value,
+            slug: e.target[1].value,
         });
         closeModal();
     };
@@ -47,26 +47,27 @@ const UpdatePostsForm = ({ post, updatePosts, closeModal }) => {
                 />
                 <Input
                     type={'text'}
-                    placeholder={'Author'}
-                    name={'author'}
-                    value={currentPost.author}
+                    placeholder={'Slug'}
+                    name={'slug'}
+                    value={currentPost.slug}
                     handleChange={handleChange}
                     required
                     className={'col-6'}
                 />
-                <Select
-                    name={'status'}
-                    options={['Publish', 'Future', 'Draft']}
-                    firstOption={'Status'}
-                    value={currentPost.status}
-                    handleChange={handleChange}
-                    className={'col-6'}
+                <Input
+                  type={'text'}
+                  placeholder={'Categories'}
+                  name={'categories'}
+                  value={currentPost.categories}
+                  handleChange={handleChange}
+                  required
+                  className={'col-6'}
                 />
                 <Input
                     type={'text'}
-                    placeholder={'Date'}
-                    name={'date'}
-                    value={currentPost.date}
+                    placeholder={'Tag'}
+                    name={'tag'}
+                    value={currentPost.tag}
                     handleChange={handleChange}
                     required
                     className={'col-6'}
@@ -74,9 +75,9 @@ const UpdatePostsForm = ({ post, updatePosts, closeModal }) => {
                 <Textarea
                     placeholder={'Body'}
                     required
-                    value={currentPost.description}
+                    value={currentPost.body}
                     handleChange={handleChange}
-                    name={'description'}
+                    name={'body'}
                 />
                 <button type={'submit'} className={'btn-second'}>
                     Submit

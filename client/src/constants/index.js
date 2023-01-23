@@ -12,3 +12,5 @@ export const URL_USER_REGISTRATION = URL_USER_BASE + "registration";
 export const URL_LIST = URL_USER_BASE + "list";
 
 export const URL_TASK_BASE = URL_USER + "task/";
+
+export const URL_POSTS_BASE = URL_USER + "posts/";

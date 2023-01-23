@@ -1,9 +1,10 @@
-import React, { useState, Suspense } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 
 import Loading from '../../../components/Loading';
 import Modal from '../../../components/Modal';
 import { PostsForm } from '../../../components/DashboardPosts';
 import { ReactComponent as EditNote } from '../../../assets/icons/edit-note.svg';
+import * as Constants from "../../../constants";
 
 const PostsList = React.lazy(() =>
     import('../../../components/DashboardPosts/PostsList')
@@ -11,36 +12,49 @@ const PostsList = React.lazy(() =>
 
 function Posts() {
     const [posts, setPosts] = useState([]);
-    const [id, setId] = useState(1);
     const [modal, setModal] = useState(false);
+    const [updatePage, setUpdatePage] = useState(true);
+
+    useEffect(() => {
+        fetch(Constants.URL_POSTS_BASE)
+          .then((res) => res.json())
+          .then((data) => setPosts(data.data));
+    }, [updatePage]);
 
     const addedPosts = (post) => {
-        setId((prev) => prev + 1);
-        setPosts([
-            ...posts,
-            {
-                id,
-                title: post.title,
-                description: post.description,
-                status: post.status,
-                date: post.date,
-                author: post.author,
+        fetch(Constants.URL_POSTS_BASE, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
             },
-        ]);
+            body: JSON.stringify(post),
+        })
+          .then((res) => res.json())
+          .then((data) => setPosts([...posts, data]));
     };
 
     const updatePosts = (e, id, post) => {
         e.preventDefault();
         const updatePosts = posts.map((item) =>
-            item.id === id ? { ...item, ...post } : item
+            item._id === id ? { ...item, ...post } : item
         );
         setPosts(updatePosts);
+        fetch(Constants.URL_POSTS_BASE + id, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(updatePosts),
+        }).then((res) => res.json());
     };
 
     const removePosts = (e, id) => {
         e.preventDefault();
-        const updatePosts = posts.filter((post) => post.id !== id);
-        setPosts(updatePosts);
+        fetch(Constants.URL_POSTS_BASE + id, {
+            method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => setUpdatePage(!updatePage));
     };
 
     const openModal = () => {
