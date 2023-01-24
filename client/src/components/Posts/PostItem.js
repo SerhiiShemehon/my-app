@@ -2,19 +2,19 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import style from './Post.module.scss';
 
-function PostItem({ name, brewers_tips, id, abv, ibu, image_url }) {
+function PostItem({ title, slug, _id, tag, categories, image_url }) {
     return (
         <div className={style.box}>
             <div className={style.image}>
-                <img src={image_url} alt={name} />
+                <img src={image_url} alt={title} />
             </div>
             <div className={style.content}>
                 <h2 className={style.title}>
-                    <Link to={`/post/${id}`}>{name}</Link>
+                    <Link to={`/post/${_id}`}>{title}</Link>
                 </h2>
-                <div className={style.description}>{brewers_tips}</div>
+                <div className={style.description}>{slug}</div>
                 <div className={style.footer}>
-                    <Link to={`/post/${id}`} className={'btn'}>
+                    <Link to={`/post/${_id}`} className={`btn ${style.btn}`}>
                         Read more
                         <svg
                             width="12"
@@ -30,11 +30,11 @@ function PostItem({ name, brewers_tips, id, abv, ibu, image_url }) {
                         </svg>
                     </Link>
                     <div className={style.info}>
-                        {abv ? (
-                            <span className={style.infoItem}>abv - {abv}</span>
+                        {tag ? (
+                            <div className={style.infoItem}>Tag - {tag}</div>
                         ) : null}
-                        {ibu ? (
-                            <span className={style.infoItem}>ibu - {ibu}</span>
+                        {categories ? (
+                            <div className={style.infoItem}>Categories - {categories}</div>
                         ) : null}
                     </div>
                 </div>

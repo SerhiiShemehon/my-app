@@ -73,7 +73,10 @@
     justify-content: space-between;
 }
 .info {
-    margin: 0 -11px;
+
+}
+.btn {
+    flex-shrink: 0;
 }
 .infoItem {
     margin: 0 11px;
@@ -81,9 +84,7 @@
     border: none;
     background: transparent;
     color: #fff;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
+    display: block;
     transition: 0.3s;
+    font-size: 12px;
 }

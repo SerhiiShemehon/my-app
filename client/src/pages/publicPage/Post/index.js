@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, {useEffect, useState} from 'react';
 import { useParams } from 'react-router-dom';
 import { BallTriangle } from 'react-loader-spinner';
 
@@ -13,19 +13,22 @@ import * as Constants from '../../../constants';
 
 function Post() {
     const { id } = useParams();
-    const { response, error, loading } = useFetch({
-        method: 'GET',
-        url: Constants.URL_BEERS,
-        params: {
-            ids: id,
-        },
-    });
+    const [post, setPost] = useState({});
+    const [status, setStatus] = useState(Constants.LOADING);
 
     useEffect(() => {
         window.scrollTo(0, 0);
+        setStatus(Constants.LOADING);
+        fetch(Constants.URL_POSTS_BASE + id)
+          .then((res) => res.json())
+          .then((data) => {
+              setPost(data);
+              setStatus(Constants.COMPLETE);
+          })
+          .catch(()=>setStatus(Constants.ERROR));
     }, []);
 
-    if (error || (!loading && Array.isArray(response) && !response.length)) {
+    if (status === Constants.ERROR) {
         return (
             <>
                 <ImageBanner image={imageBanner} />
@@ -38,24 +41,25 @@ function Post() {
         );
     }
 
-    return loading ? (
+    return status === Constants.LOADING ? (
         <BallTriangle
             color="#5458F7"
             wrapperStyle={{ justifyContent: 'center' }}
         />
     ) : (
         <>
-            <ImageBanner image={imageBanner} title={response[0].name} />
+            <ImageBanner image={imageBanner} title={post.title} />
             <div className="post-content">
                 <div className="image-holder">
-                    <img src={response[0].image_url} alt={response[0].name} />
+                    <img src={post.image_url} alt={post.title} />
                 </div>
                 <div className="text-holder">
                     <p>
-                        <strong>{response[0].tagline}</strong>
+                        <strong>{post.slug}</strong>
                     </p>
-                    <p>{response[0].description}</p>
-                    <blockquote>{response[0].brewers_tips}</blockquote>
+                    <p>{post.body}</p>
+                    <div><strong>Tag</strong> {post.tag}</div>
+                    <div><strong>Categories</strong> {post.categories}</div>
                 </div>
             </div>
         </>
