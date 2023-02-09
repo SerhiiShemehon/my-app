@@ -1,7 +1,7 @@
 import React from 'react';
 
-function Input({ handleChange, ...props }) {
-    return <input onChange={handleChange} {...props} />;
+function Input(props) {
+    return <input {...props} />;
 }
 
 export default Input;

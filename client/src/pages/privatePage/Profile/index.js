@@ -104,7 +104,7 @@ function Profile() {
           <div className="profile-form">
             <Form handleSubmit={(e) => handleSubmit(e, user._id)}>
               <Input
-                handleChange={handleChange}
+                onChange={handleChange}
                 type="text"
                 placeholder="First Name"
                 name="fullName"
@@ -112,7 +112,7 @@ function Profile() {
                 required
               />
               <Input
-                handleChange={handleChange}
+                onChange={handleChange}
                 type="email"
                 placeholder="Email"
                 name="email"

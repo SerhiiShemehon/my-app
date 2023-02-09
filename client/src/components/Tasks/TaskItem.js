@@ -59,7 +59,7 @@ const TaskItem = ({ task, updateTasks, removeTasks }) => {
     ) : (
         <div className="task-form">
             <Form handleSubmit={editTasks}>
-                <Input handleChange={handleChange} value={title} name="title" />
+                <Input onChange={handleChange} value={title} name="title" />
                 <button type="submit">edit</button>
             </Form>
         </div>

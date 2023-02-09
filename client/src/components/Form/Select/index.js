@@ -1,8 +1,8 @@
 import React from 'react';
 
-function Select({ options, firstOption, handleChange, ...props }) {
+function Select({ options, firstOption, ...props }) {
     return (
-        <select onChange={handleChange} {...props}>
+        <select {...props}>
             <option value="0">{firstOption}</option>
             {options.map((item, index) => (
                 <option

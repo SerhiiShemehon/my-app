@@ -57,7 +57,7 @@ function Registration() {
                 <h2 className="title-block">Registration</h2>
                 <Form handleSubmit={handleSubmit}>
                     <Input
-                        handleChange={handleChange}
+                      onChange={handleChange}
                         type="text"
                         placeholder="First Name"
                         name="fmame"
@@ -65,7 +65,7 @@ function Registration() {
                         className="col-6"
                     />
                     <Input
-                        handleChange={handleChange}
+                      onChange={handleChange}
                         type="text"
                         placeholder="Last Name"
                         name="lmame"
@@ -73,7 +73,7 @@ function Registration() {
                         className="col-6"
                     />
                     <Input
-                        handleChange={handleChange}
+                      onChange={handleChange}
                         type="email"
                         placeholder="Email"
                         name="email"
@@ -81,7 +81,7 @@ function Registration() {
                         className="col-6"
                     />
                     <Input
-                        handleChange={handleChange}
+                      onChange={handleChange}
                         type="tel"
                         placeholder="Phone"
                         name="phone"
@@ -90,7 +90,7 @@ function Registration() {
                         className="col-6"
                     />
                     <Input
-                        handleChange={handleChange}
+                      onChange={handleChange}
                         type="password"
                         placeholder="Password"
                         name="password"
@@ -98,7 +98,7 @@ function Registration() {
                         className="col-6"
                     />
                     <Input
-                        handleChange={handleChange}
+                      onChange={handleChange}
                         type="password"
                         placeholder="Confirm Password"
                         name="confirmPassword"

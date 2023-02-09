@@ -51,7 +51,7 @@ function Login() {
           <h2 className="title-block">Login</h2>
           <Form handleSubmit={handleSubmit}>
             <Input
-              handleChange={handleChange}
+              onChange={handleChange}
               type="email"
               placeholder="Email"
               name="email"
@@ -59,7 +59,7 @@ function Login() {
               className="col-12"
             />
             <Input
-              handleChange={handleChange}
+              onChange={handleChange}
               type="password"
               placeholder="Password"
               name="password"

@@ -40,18 +40,18 @@ function PostFilter({ filterChange }) {
                 name="abv_lt"
                 options={OPTIONS_ABV}
                 firstOption="ABV less"
-                handleChange={selectChangeABV}
+                onChange={selectChangeABV}
             />
             <Select
                 name="ibu_lt"
                 options={OPTIONS_IBU}
                 firstOption="IBU less"
-                handleChange={selectChangeIBU}
+                onChange={selectChangeIBU}
             />
             <Input
                 type="search"
                 placeholder="Search Article"
-                handleChange={inputChange}
+                onChange={inputChange}
             />
         </div>
     );

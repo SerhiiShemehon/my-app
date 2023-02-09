@@ -1,35 +1,26 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Form, Input, Textarea } from '../Form';
 
 const UpdatePostsForm = ({ post, updatePosts, closeModal }) => {
-    const [currentPost, setCurrentPost] = useState({});
-
-    useEffect(() => {
-        setCurrentPost({
-            title: post.title,
-            body: post.body,
-            categories: post.categories,
-            tag: post.tag,
-            slug: post.slug,
-        });
-    }, [post]);
+    const [currentPost, setCurrentPost] = useState({
+        title: post.title,
+        body: post.body,
+        categories: post.categories,
+        tag: post.tag,
+        slug: post.slug,
+    });
 
     const handleSubmit = (e) => {
-        updatePosts(e, post._id, {
-            title: e.target[0].value,
-            body: e.target[4].value,
-            categories: e.target[2].value,
-            tag: e.target[3].value,
-            slug: e.target[1].value,
-        });
+        e.preventDefault();
+        updatePosts(e, post._id, currentPost);
         closeModal();
     };
 
     const handleChange = (e) => {
-        setCurrentPost((prevPost) => ({
+        setCurrentPost({
             ...currentPost,
             [e.target.name]: e.target.value,
-        }));
+        });
     };
 
     return (
@@ -41,7 +32,7 @@ const UpdatePostsForm = ({ post, updatePosts, closeModal }) => {
                     placeholder={'Title'}
                     name={'title'}
                     value={currentPost.title}
-                    handleChange={handleChange}
+                    onChange={handleChange}
                     required
                     className={'col-6'}
                 />
@@ -50,7 +41,7 @@ const UpdatePostsForm = ({ post, updatePosts, closeModal }) => {
                     placeholder={'Slug'}
                     name={'slug'}
                     value={currentPost.slug}
-                    handleChange={handleChange}
+                    onChange={handleChange}
                     required
                     className={'col-6'}
                 />
@@ -59,7 +50,7 @@ const UpdatePostsForm = ({ post, updatePosts, closeModal }) => {
                   placeholder={'Categories'}
                   name={'categories'}
                   value={currentPost.categories}
-                  handleChange={handleChange}
+                  onChange={handleChange}
                   required
                   className={'col-6'}
                 />
@@ -68,7 +59,7 @@ const UpdatePostsForm = ({ post, updatePosts, closeModal }) => {
                     placeholder={'Tag'}
                     name={'tag'}
                     value={currentPost.tag}
-                    handleChange={handleChange}
+                    onChange={handleChange}
                     required
                     className={'col-6'}
                 />
@@ -76,7 +67,7 @@ const UpdatePostsForm = ({ post, updatePosts, closeModal }) => {
                     placeholder={'Body'}
                     required
                     value={currentPost.body}
-                    handleChange={handleChange}
+                    onChange={handleChange}
                     name={'body'}
                 />
                 <button type={'submit'} className={'btn-second'}>

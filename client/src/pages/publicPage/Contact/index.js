@@ -48,7 +48,7 @@ function Contact() {
                     <h2 className="title-block">Contact Form</h2>
                     <Form handleSubmit={handleSubmit}>
                         <Input
-                            handleChange={handleChange}
+                          onChange={handleChange}
                             type="text"
                             placeholder="First Name"
                             name="fmame"
@@ -56,7 +56,7 @@ function Contact() {
                             className="col-6"
                         />
                         <Input
-                            handleChange={handleChange}
+                          onChange={handleChange}
                             type="text"
                             placeholder="Last Name"
                             name="lmame"
@@ -64,7 +64,7 @@ function Contact() {
                             className="col-6"
                         />
                         <Input
-                            handleChange={handleChange}
+                          onChange={handleChange}
                             type={'email'}
                             placeholder={'Email'}
                             name={'email'}
@@ -72,7 +72,7 @@ function Contact() {
                             className={'col-6'}
                         />
                         <Input
-                            handleChange={handleChange}
+                          onChange={handleChange}
                             type="tel"
                             placeholder="Phone"
                             name="phone"
@@ -81,7 +81,7 @@ function Contact() {
                             className="col-6"
                         />
                         <Textarea
-                            handleChange={handleChange}
+                          onChange={handleChange}
                             placeholder="Message"
                             required
                             name="message"

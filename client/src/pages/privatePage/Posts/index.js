@@ -12,57 +12,75 @@ const PostsList = React.lazy(() =>
 
 function Posts() {
     const [posts, setPosts] = useState([]);
-    const [modal, setModal] = useState(false);
-    const [updatePage, setUpdatePage] = useState(true);
+    const [modalOpen, setModalOpen] = useState(false);
+    const [isUpdatePage, setIsUpdatePage] = useState(true);
 
     useEffect(() => {
-        fetch(Constants.URL_POSTS_BASE)
-          .then((res) => res.json())
-          .then((data) => setPosts(data.data));
-    }, [updatePage]);
+        fetchData();
+    }, [isUpdatePage]);
 
-    const addedPosts = (post) => {
-        fetch(Constants.URL_POSTS_BASE, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(post),
-        })
-          .then((res) => res.json())
-          .then((data) => setPosts([...posts, data]));
+    const fetchData = async () => {
+        try {
+            const res = await fetch(Constants.URL_POSTS_BASE);
+            const data = await res.json();
+            setPosts(data.data)
+        } catch (error) {
+            console.error(error)
+        }
+    }
+
+    const addPost = async (post) => {
+        try {
+            const res = await fetch(Constants.URL_POSTS_BASE, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(post),
+            });
+            const data = await res.json()
+            setPosts([...posts, data])
+        } catch (error) {
+            console.error(error)
+        }
     };
 
-    const updatePosts = (e, id, post) => {
+    const updatePosts = async (e, id, post) => {
         e.preventDefault();
-        const updatePosts = posts.map((item) =>
-            item._id === id ? { ...item, ...post } : item
-        );
-        setPosts(updatePosts);
-        fetch(Constants.URL_POSTS_BASE + id, {
-            method: "PATCH",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(updatePosts),
-        }).then((res) => res.json());
+        try {
+            const updatedPost = { ...post, _id: id };
+            const res = await fetch(`${Constants.URL_POSTS_BASE}${id}`, {
+                method: "PATCH",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(updatedPost),
+            });
+            const data = await res.json()
+            setPosts(posts.map((p) => (p._id === id ? data : p)));
+        }  catch (error) {
+            console.error(error)
+        }
     };
 
-    const removePosts = (e, id) => {
+    const removePosts = async (e, id) => {
         e.preventDefault();
-        fetch(Constants.URL_POSTS_BASE + id, {
-            method: "DELETE",
-        })
-          .then((res) => res.json())
-          .then((data) => setUpdatePage(!updatePage));
+        try {
+            await fetch(`${Constants.URL_POSTS_BASE}${id}`, {
+                method: "DELETE",
+            });
+            setIsUpdatePage(!isUpdatePage);
+        }  catch (error) {
+            console.error(error)
+        }
     };
 
     const openModal = () => {
-        setModal(true);
+        setModalOpen(true);
     };
 
     const closeModal = () => {
-        setModal(false);
+        setModalOpen(false);
     };
 
     return (
@@ -84,10 +102,10 @@ function Posts() {
             ) : (
                 <div className="no-post">No posts</div>
             )}
-            {modal ? (
+            {modalOpen ? (
                 <Modal closeModal={closeModal}>
                     <PostsForm
-                        addedPosts={addedPosts}
+                        addedPosts={addPost}
                         closeModal={closeModal}
                     />
                 </Modal>

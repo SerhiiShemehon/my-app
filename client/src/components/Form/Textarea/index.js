@@ -1,7 +1,7 @@
 import React from 'react';
 
-function Textarea({ handleChange, ...props }) {
-    return <textarea onChange={handleChange} {...props} />;
+function Textarea(props) {
+    return <textarea {...props} />;
 }
 
 export default Textarea;
