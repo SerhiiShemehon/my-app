@@ -1,4 +1,5 @@
 import React, { Suspense } from 'react';
+import { Helmet } from 'react-helmet';
 
 import Loading from '../../../components/Loading';
 
@@ -20,6 +21,9 @@ const LineBarAreaComposedChart = React.lazy(() =>
 function Dashboard() {
     return (
         <>
+            <Helmet>
+                <title>Dashboard | My App</title>
+            </Helmet>
             <h1 className="dashboard-title">Dashboard</h1>
             <div className="diagram-list">
                 <div className="diagram-item">

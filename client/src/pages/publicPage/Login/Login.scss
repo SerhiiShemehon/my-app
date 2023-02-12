@@ -31,13 +31,29 @@
         font-size: 42px;
         line-height: 1.2;
     }
+    .link {
+        display: inline-block;
+        margin-top: 10px;
+        color: #fff;
+        font-size: 14px;
+        &:hover {
+            text-decoration: none;
+        }
+    }
     form {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-        input {
+        .form-control {
             width: 100%;
             margin-bottom: 41px;
+        }
+        .col-6 {
+            width: 100%;
+            max-width: calc(50% - 19px);
+        }
+        input {
+            width: 100%;
             padding: 20px 42px 19px;
             background: rgba(48, 48, 51, 0.7);
             border-radius: 10px;
@@ -61,9 +77,6 @@
             }
             &.placeholder {
                 color: #fff;
-            }
-            &.col-6 {
-                max-width: calc(50% - 19px);
             }
         }
         .btn-second {

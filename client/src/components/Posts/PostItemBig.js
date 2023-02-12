@@ -2,11 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import style from './Post.module.scss';
 
-function PostItemBig({ title, slug, _id, tag, categories, image_url }) {
+function PostItemBig({ title, slug, _id, thumbnail }) {
     return (
         <div className={style.boxBig}>
             <div className={style.image}>
-                <img src={image_url} alt={title} />
+                <img src={thumbnail} alt={title} />
             </div>
             <div className={style.content}>
                 <h2 className={style.title}>
@@ -16,7 +16,7 @@ function PostItemBig({ title, slug, _id, tag, categories, image_url }) {
                     <p>{slug}</p>
                 </div>
                 <div className={style.footer}>
-                    <Link to={`/post/${_id}`}  className={`btn ${style.btn}`}>
+                    <Link to={`/post/${_id}`} className={`btn ${style.btn}`}>
                         Read more
                         <svg
                             width="12"
@@ -31,14 +31,6 @@ function PostItemBig({ title, slug, _id, tag, categories, image_url }) {
                             />
                         </svg>
                     </Link>
-                    <div className={style.info}>
-                        {tag ? (
-                          <div className={style.infoItem}>Tag - {tag}</div>
-                        ) : null}
-                        {categories ? (
-                          <div className={style.infoItem}>Categories - {categories}</div>
-                        ) : null}
-                    </div>
                 </div>
             </div>
         </div>

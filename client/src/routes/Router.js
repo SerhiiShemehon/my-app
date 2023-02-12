@@ -11,6 +11,8 @@ import {
     Registration,
     PrivacyPolicy,
     Other,
+    About,
+    Portfolio
 } from '../pages/publicPage';
 import {
     Dashboard,
@@ -23,6 +25,7 @@ import {
 import { AuthContext } from '../context/auth';
 
 import '../assets/css/style.scss';
+import ForgotPassword from "../pages/publicPage/ForgotPassword";
 
 function Router() {
     const { user } = useContext(AuthContext);
@@ -32,8 +35,11 @@ function Router() {
                 <Route index element={<Home />} />
                 <Route path="/post/:id" element={<Post />} />
                 <Route path="/contact" element={<Contact />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/portfolio" element={<Portfolio />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/registration" element={<Registration />} />
+                <Route path="/forgot-password" element={<ForgotPassword />} />
                 <Route path="/other" element={<Other />} />
                 {!user ? (
                     <Route path="/privacy-policy" element={<PrivacyPolicy />} />

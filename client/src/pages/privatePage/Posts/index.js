@@ -1,10 +1,12 @@
 import React, { useState, useEffect, Suspense } from 'react';
+import axios from 'axios';
+import { Helmet } from 'react-helmet';
 
 import Loading from '../../../components/Loading';
 import Modal from '../../../components/Modal';
 import { PostsForm } from '../../../components/DashboardPosts';
 import { ReactComponent as EditNote } from '../../../assets/icons/edit-note.svg';
-import * as Constants from "../../../constants";
+import * as Constants from '../../../constants';
 
 const PostsList = React.lazy(() =>
     import('../../../components/DashboardPosts/PostsList')
@@ -21,57 +23,68 @@ function Posts() {
 
     const fetchData = async () => {
         try {
-            const res = await fetch(Constants.URL_POSTS_BASE);
-            const data = await res.json();
-            setPosts(data.data)
+            const res = await axios(Constants.URL_POSTS_BASE);
+            const data = await res.data;
+            setPosts(data.data);
         } catch (error) {
-            console.error(error)
-        }
-    }
-
-    const addPost = async (post) => {
-        try {
-            const res = await fetch(Constants.URL_POSTS_BASE, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(post),
-            });
-            const data = await res.json()
-            setPosts([...posts, data])
-        } catch (error) {
-            console.error(error)
+            console.error(error);
         }
     };
 
-    const updatePosts = async (e, id, post) => {
-        e.preventDefault();
+    const addPost = async (post) => {
         try {
-            const updatedPost = { ...post, _id: id };
-            const res = await fetch(`${Constants.URL_POSTS_BASE}${id}`, {
-                method: "PATCH",
+            const formData = new FormData();
+            formData.append('title', post.title);
+            formData.append('body', post.body);
+            formData.append('categories', post.categories);
+            formData.append('tag', post.tag);
+            formData.append('slug', post.slug);
+            formData.append('thumbnail', post.thumbnail);
+
+            const res = await axios.post(Constants.URL_POSTS_BASE, formData, {
                 headers: {
-                    "Content-Type": "application/json",
+                    'Content-Type': 'multipart/form-data',
                 },
-                body: JSON.stringify(updatedPost),
             });
-            const data = await res.json()
+            const data = await res.data;
+            setPosts([...posts, data]);
+        } catch (error) {
+            console.error(error);
+        }
+    };
+
+    const updatePosts = async (id, post) => {
+        try {
+            const formData = new FormData();
+            formData.append('title', post.title);
+            formData.append('body', post.body);
+            formData.append('categories', post.categories);
+            formData.append('tag', post.tag);
+            formData.append('slug', post.slug);
+            formData.append('_id', id);
+            const res = await axios.patch(
+                `${Constants.URL_POSTS_BASE}${id}`,
+                formData,
+                {
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                }
+            );
+            const data = await res.data;
             setPosts(posts.map((p) => (p._id === id ? data : p)));
-        }  catch (error) {
-            console.error(error)
+        } catch (error) {
+            console.error(error);
         }
     };
 
     const removePosts = async (e, id) => {
         e.preventDefault();
         try {
-            await fetch(`${Constants.URL_POSTS_BASE}${id}`, {
-                method: "DELETE",
-            });
+            await axios.delete(`${Constants.URL_POSTS_BASE}${id}`);
             setIsUpdatePage(!isUpdatePage);
-        }  catch (error) {
-            console.error(error)
+        } catch (error) {
+            console.error(error);
         }
     };
 
@@ -85,6 +98,9 @@ function Posts() {
 
     return (
         <>
+            <Helmet>
+                <title>Posts | My App</title>
+            </Helmet>
             <div className="dashboard-header">
                 <h1 className="dashboard-title">Posts</h1>
                 <button className="btn-icon" onClick={openModal}>
@@ -104,10 +120,7 @@ function Posts() {
             )}
             {modalOpen ? (
                 <Modal closeModal={closeModal}>
-                    <PostsForm
-                        addedPosts={addPost}
-                        closeModal={closeModal}
-                    />
+                    <PostsForm addedPosts={addPost} closeModal={closeModal} />
                 </Modal>
             ) : null}
         </>

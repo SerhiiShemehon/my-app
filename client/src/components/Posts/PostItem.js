@@ -2,11 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import style from './Post.module.scss';
 
-function PostItem({ title, slug, _id, tag, categories, image_url }) {
+function PostItem({ title, slug, _id, thumbnail }) {
     return (
         <div className={style.box}>
             <div className={style.image}>
-                <img src={image_url} alt={title} />
+                <img src={thumbnail} alt={title} />
             </div>
             <div className={style.content}>
                 <h2 className={style.title}>
@@ -29,14 +29,6 @@ function PostItem({ title, slug, _id, tag, categories, image_url }) {
                             />
                         </svg>
                     </Link>
-                    <div className={style.info}>
-                        {tag ? (
-                            <div className={style.infoItem}>Tag - {tag}</div>
-                        ) : null}
-                        {categories ? (
-                            <div className={style.infoItem}>Categories - {categories}</div>
-                        ) : null}
-                    </div>
                 </div>
             </div>
         </div>

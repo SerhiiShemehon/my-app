@@ -1,15 +1,42 @@
-import { Form, Input, Textarea } from '../Form';
+import { useState } from 'react';
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
+import { Form, Input } from '../Form';
 
 const PostsForm = ({ addedPosts, closeModal }) => {
+    const [newPost, setNewPost] = useState({
+        title: '',
+        body: '',
+        categories: '',
+        tag: '',
+        slug: '',
+        thumbnail: null,
+    });
+
+    const handleChange = (e) => {
+        setNewPost({
+            ...newPost,
+            [e.target.name]: e.target.value,
+        });
+    };
+
+    const handleFileChange = (e) => {
+        setNewPost({
+            ...newPost,
+            [e.target.name]: e.target.files[0],
+        });
+    };
+
+    const handleTextChange = (e) => {
+        setNewPost({
+            ...newPost,
+            body: e,
+        });
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        addedPosts({
-            title: e.target[0].value,
-            body: e.target[4].value,
-            categories: e.target[2].value,
-            tag: e.target[3].value,
-            slug: e.target[1].value
-        });
+        addedPosts(newPost);
         closeModal();
     };
 
@@ -21,6 +48,8 @@ const PostsForm = ({ addedPosts, closeModal }) => {
                     type="text"
                     placeholder="Title"
                     name="title"
+                    value={newPost.title}
+                    onChange={handleChange}
                     required
                     className="col-6"
                 />
@@ -28,24 +57,42 @@ const PostsForm = ({ addedPosts, closeModal }) => {
                     type="text"
                     placeholder="Slug"
                     name="slug"
+                    value={newPost.slug}
+                    onChange={handleChange}
                     required
                     className="col-6"
                 />
                 <Input
-                  type="text"
-                  placeholder="Categories"
-                  name="categories"
-                  required
-                  className="col-6"
+                    type="text"
+                    placeholder="Categories"
+                    name="categories"
+                    value={newPost.categories}
+                    onChange={handleChange}
+                    required
+                    className="col-6"
                 />
                 <Input
                     type="text"
                     placeholder="Tag"
                     name="tag"
+                    value={newPost.tag}
+                    onChange={handleChange}
                     required
                     className="col-6"
                 />
-                <Textarea placeholder="Body" required name="body" />
+                <ReactQuill
+                    theme="snow"
+                    value={newPost.body}
+                    onChange={handleTextChange}
+                    className="col-12"
+                />
+                <Input
+                    type="file"
+                    name="thumbnail"
+                    onChange={handleFileChange}
+                    required
+                    className="col-12"
+                />
                 <button type="submit" className="btn-second">
                     Submit
                 </button>

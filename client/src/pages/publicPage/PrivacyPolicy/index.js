@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Helmet } from 'react-helmet';
 
 import ImageBanner from '../../../components/ImageBanner';
 
@@ -11,6 +12,9 @@ function PrivacyPolicy() {
 
     return (
         <>
+            <Helmet>
+                <title>Privacy Policy | My App</title>
+            </Helmet>
             <ImageBanner image={imageBanner} title="Privacy Policy" />
             <div className="container container-big">
                 <div className="text-page">

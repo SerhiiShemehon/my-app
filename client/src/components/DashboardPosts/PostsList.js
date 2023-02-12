@@ -8,7 +8,6 @@ const PostsList = ({ posts, updatePosts, removePosts }) => {
         <div className={'post-list'}>
             <div className={'post-header'}>
                 <span>Post</span>
-                <span>Slug</span>
                 <span>Tag</span>
                 <span>Categories</span>
                 <span />

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Helmet } from 'react-helmet';
 
 import ImageBanner from '../../../components/ImageBanner';
 import { Form, Input, Textarea } from '../../../components/Form';
@@ -42,13 +43,16 @@ function Contact() {
 
     return (
         <>
+            <Helmet>
+                <title>Contact | My App</title>
+            </Helmet>
             <ImageBanner image={imageBanner} title="Contact" />
             <div className="container">
                 <div className="form-section">
                     <h2 className="title-block">Contact Form</h2>
                     <Form handleSubmit={handleSubmit}>
                         <Input
-                          onChange={handleChange}
+                            onChange={handleChange}
                             type="text"
                             placeholder="First Name"
                             name="fmame"
@@ -56,7 +60,7 @@ function Contact() {
                             className="col-6"
                         />
                         <Input
-                          onChange={handleChange}
+                            onChange={handleChange}
                             type="text"
                             placeholder="Last Name"
                             name="lmame"
@@ -64,7 +68,7 @@ function Contact() {
                             className="col-6"
                         />
                         <Input
-                          onChange={handleChange}
+                            onChange={handleChange}
                             type={'email'}
                             placeholder={'Email'}
                             name={'email'}
@@ -72,7 +76,7 @@ function Contact() {
                             className={'col-6'}
                         />
                         <Input
-                          onChange={handleChange}
+                            onChange={handleChange}
                             type="tel"
                             placeholder="Phone"
                             name="phone"
@@ -81,7 +85,7 @@ function Contact() {
                             className="col-6"
                         />
                         <Textarea
-                          onChange={handleChange}
+                            onChange={handleChange}
                             placeholder="Message"
                             required
                             name="message"

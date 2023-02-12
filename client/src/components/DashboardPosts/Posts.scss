@@ -188,4 +188,24 @@
             border-color: darken(#bdb2ff, 10%);
         }
     }
+
+    .quill {
+        width: 100%;
+        margin-bottom: 40px;
+    }
+    .ql-toolbar.ql-snow {
+        background: #bdb2ff;
+        border: 1px solid #bdb2ff;
+        border-radius: 8px;
+        margin-bottom: 5px;
+    }
+    .ql-container.ql-snow {
+        background: #bdb2ff;
+        border: 1px solid #bdb2ff;
+        border-radius: 8px;
+        height: auto;
+    }
+    .ql-editor {
+        min-height: 300px;
+    }
 }

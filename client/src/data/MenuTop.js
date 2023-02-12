@@ -11,11 +11,16 @@ const MENU_TOP = [
     },
     {
         id: 3,
-        title: 'Item',
-        link: '/news',
+        title: 'Portfolio',
+        link: '/portfolio',
     },
     {
         id: 4,
+        title: 'About',
+        link: '/about',
+    },
+    {
+        id: 5,
         title: 'Contact',
         link: '/contact',
     },

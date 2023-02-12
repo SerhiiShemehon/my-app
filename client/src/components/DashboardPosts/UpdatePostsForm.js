@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { Form, Input, Textarea } from '../Form';
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
+import { Form, Input } from '../Form';
 
 const UpdatePostsForm = ({ post, updatePosts, closeModal }) => {
     const [currentPost, setCurrentPost] = useState({
@@ -12,7 +14,7 @@ const UpdatePostsForm = ({ post, updatePosts, closeModal }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        updatePosts(e, post._id, currentPost);
+        updatePosts(post._id, currentPost);
         closeModal();
     };
 
@@ -20,6 +22,13 @@ const UpdatePostsForm = ({ post, updatePosts, closeModal }) => {
         setCurrentPost({
             ...currentPost,
             [e.target.name]: e.target.value,
+        });
+    };
+
+    const handleTextChange = (e) => {
+        setCurrentPost({
+            ...currentPost,
+            body: e,
         });
     };
 
@@ -46,13 +55,13 @@ const UpdatePostsForm = ({ post, updatePosts, closeModal }) => {
                     className={'col-6'}
                 />
                 <Input
-                  type={'text'}
-                  placeholder={'Categories'}
-                  name={'categories'}
-                  value={currentPost.categories}
-                  onChange={handleChange}
-                  required
-                  className={'col-6'}
+                    type={'text'}
+                    placeholder={'Categories'}
+                    name={'categories'}
+                    value={currentPost.categories}
+                    onChange={handleChange}
+                    required
+                    className={'col-6'}
                 />
                 <Input
                     type={'text'}
@@ -63,12 +72,11 @@ const UpdatePostsForm = ({ post, updatePosts, closeModal }) => {
                     required
                     className={'col-6'}
                 />
-                <Textarea
-                    placeholder={'Body'}
-                    required
-                    value={currentPost.body}
-                    onChange={handleChange}
-                    name={'body'}
+                <ReactQuill
+                  theme="snow"
+                  value={currentPost.body}
+                  onChange={handleTextChange}
+                  className="col-12"
                 />
                 <button type={'submit'} className={'btn-second'}>
                     Submit

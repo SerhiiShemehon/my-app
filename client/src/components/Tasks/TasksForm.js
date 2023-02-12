@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { Form, Input } from '../Form';
 
-const TasksForm = ({ addedTasks }) => {
+const TasksForm = ({ addTasks }) => {
     const [characterLength, setCharacterLength] = useState(false);
 
     const handleSubmit = (e) => {
         e.preventDefault();
         if (e.target[0].value.length > 2) {
-            addedTasks(e.target[0].value);
+            addTasks(e.target[0].value);
             e.target[0].value = '';
             setCharacterLength(false);
         } else {

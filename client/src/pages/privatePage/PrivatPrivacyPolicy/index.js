@@ -1,8 +1,12 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 
 function PrivatPrivacyPolicy() {
     return (
         <>
+          <Helmet>
+            <title>Privacy Policy | My App</title>
+          </Helmet>
             <h1 className="dashboard-title">Privacy Policy</h1>
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.

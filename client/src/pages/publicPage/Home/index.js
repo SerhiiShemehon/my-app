@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import { Helmet } from 'react-helmet';
 
 import ImageBanner from '../../../components/ImageBanner';
 import Loading from '../../../components/Loading';
@@ -15,20 +17,28 @@ import imageBanner from '../../../assets/images/image01.jpg';
 function Home() {
     const [posts, setPosts] = useState([]);
     const [status, setStatus] = useState(Constants.LOADING);
-
     useEffect(() => {
+        fetchData();
+    }, []);
+
+    const fetchData = async () => {
         window.scrollTo(0, 0);
         setStatus(Constants.LOADING);
-        fetch(Constants.URL_POSTS_BASE)
-          .then((res) => res.json())
-          .then((data) => {
-              setPosts(data.data);
-              setStatus(Constants.COMPLETE);
-          });
-    }, []);
+        try {
+            const res = await axios(Constants.URL_POSTS_BASE);
+            const data = await res.data;
+            setPosts(data.data);
+        } catch (error) {
+            console.error(error);
+        }
+        setStatus(Constants.COMPLETE);
+    };
 
     return (
         <>
+            <Helmet>
+                <title>Home | My App</title>
+            </Helmet>
             <ImageBanner image={imageBanner} />
             <PostWrapper>
                 {status === Constants.ERROR ? (
@@ -52,9 +62,7 @@ function Home() {
                                 )
                             )}
                         </PostList>
-                        {status === Constants.LOADING
-                          ? ( <Loading /> )
-                          : null}
+                        {status === Constants.LOADING ? <Loading /> : null}
                     </>
                 )}
             </PostWrapper>

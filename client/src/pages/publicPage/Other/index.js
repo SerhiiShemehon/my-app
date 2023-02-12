@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef, memo, useMemo } from 'react';
+import { Helmet } from 'react-helmet';
 
 import ImageBanner from '../../../components/ImageBanner';
 import imageBanner from '../../../assets/images/image03.jpg';
@@ -99,6 +100,9 @@ function Other() {
 
     return (
         <>
+            <Helmet>
+                <title>Other | My App</title>
+            </Helmet>
             <ImageBanner image={imageBanner} title={'Contact'} />
             <div className={'container'}>
                 <Modal />

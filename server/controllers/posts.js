@@ -21,7 +21,7 @@ export const getPosts = async (req, res) => {
   const { page } = req.query;
 
   try {
-    const LIMIT = 20;
+    const LIMIT = 15;
     const startIndex = (Number(page) - 1) * LIMIT;
     const total = await Post.countDocuments({});
     const posts = await Post.find()
@@ -39,12 +39,12 @@ export const getPosts = async (req, res) => {
 };
 
 export const createPost = async (req, res) => {
-  // if (req.file == undefined) {
-  //   return res.json({ message: "Error: No File Selected!" });
-  // }
+  if (req.file == undefined) {
+    return res.json({ message: "Error: No File Selected!" });
+  }
 
   const { title, body, tag, categories, slug } = req.body;
-  // const fullUrl = `http://localhost:${PORT}/uploads/${req.file.filename}`;
+  const fullUrl = `http://localhost:${PORT}/uploads/${req.file.filename}`;
 
   const post = new Post({
     title,
@@ -52,7 +52,7 @@ export const createPost = async (req, res) => {
     tag,
     categories,
     slug,
-    // thumbnail: fullUrl,
+    thumbnail: fullUrl,
   });
 
   try {
