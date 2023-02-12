@@ -1,4 +1,3 @@
-import React from 'react';
 import './Posts.scss';
 
 function PostWrapper({ children }) {

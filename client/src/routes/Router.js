@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 import { PublicLayout, PrivateLayout } from '../layouts';
@@ -12,7 +12,7 @@ import {
     PrivacyPolicy,
     Other,
     About,
-    Portfolio
+    Portfolio,
 } from '../pages/publicPage';
 import {
     Dashboard,
@@ -25,7 +25,7 @@ import {
 import { AuthContext } from '../context/auth';
 
 import '../assets/css/style.scss';
-import ForgotPassword from "../pages/publicPage/ForgotPassword";
+import ForgotPassword from '../pages/publicPage/ForgotPassword';
 
 function Router() {
     const { user } = useContext(AuthContext);

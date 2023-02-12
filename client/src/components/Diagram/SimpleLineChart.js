@@ -1,4 +1,3 @@
-import React from 'react';
 import {
     LineChart,
     Line,
@@ -12,7 +11,7 @@ import {
 
 import { DataSimpleLineChart } from '../../data';
 
-const SimpleLineChart = () => {
+function SimpleLineChart() {
     return (
         <ResponsiveContainer width="100%" height="100%">
             <LineChart
@@ -41,6 +40,6 @@ const SimpleLineChart = () => {
             </LineChart>
         </ResponsiveContainer>
     );
-};
+}
 
 export default SimpleLineChart;

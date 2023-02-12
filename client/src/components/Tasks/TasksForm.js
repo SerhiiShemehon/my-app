@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Form, Input } from '../Form';
 
-const TasksForm = ({ addTasks }) => {
+function TasksForm({ addTasks }) {
     const [characterLength, setCharacterLength] = useState(false);
 
     const handleSubmit = (e) => {
@@ -26,6 +26,6 @@ const TasksForm = ({ addTasks }) => {
             </Form>
         </div>
     );
-};
+}
 
 export default TasksForm;

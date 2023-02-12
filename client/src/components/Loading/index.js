@@ -1,7 +1,6 @@
-import React from 'react';
 import { BallTriangle } from 'react-loader-spinner';
 
-const Loading = () => {
+function Loading() {
     return (
         <BallTriangle
             color="#5458F7"
@@ -10,6 +9,6 @@ const Loading = () => {
             wrapperStyle={{ justifyContent: 'center' }}
         />
     );
-};
+}
 
 export default Loading;

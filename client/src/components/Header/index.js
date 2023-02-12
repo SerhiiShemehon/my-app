@@ -1,4 +1,3 @@
-import React from 'react';
 import Logo from '../Logo';
 import { NavList, NavItem } from '../Nav';
 import UserMenu from '../UserMenu';
@@ -14,7 +13,7 @@ function Header() {
                 <Logo />
                 <div className="header-nav">
                     <NavList className="primary-menu">
-                        {MENU_TOP.map((item, index) => (
+                        {MENU_TOP.map((item) => (
                             <NavItem
                                 key={item.id}
                                 title={item.title}

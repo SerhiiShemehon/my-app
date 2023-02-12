@@ -1,12 +1,11 @@
-import React from 'react';
 import PostsItem from './PostsItem';
 
 import './Posts.scss';
 
-const PostsList = ({ posts, updatePosts, removePosts }) => {
+function PostsList({ posts, updatePosts, removePosts }) {
     return (
-        <div className={'post-list'}>
-            <div className={'post-header'}>
+        <div className="post-list">
+            <div className="post-header">
                 <span>Post</span>
                 <span>Tag</span>
                 <span>Categories</span>
@@ -22,6 +21,6 @@ const PostsList = ({ posts, updatePosts, removePosts }) => {
             ))}
         </div>
     );
-};
+}
 
 export default PostsList;

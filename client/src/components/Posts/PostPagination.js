@@ -1,5 +1,3 @@
-import React from 'react';
-
 function PostPagination({ onClick }) {
     return (
         <div className="posts-pagination">

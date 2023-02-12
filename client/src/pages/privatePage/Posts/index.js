@@ -17,10 +17,6 @@ function Posts() {
     const [modalOpen, setModalOpen] = useState(false);
     const [isUpdatePage, setIsUpdatePage] = useState(true);
 
-    useEffect(() => {
-        fetchData();
-    }, [isUpdatePage]);
-
     const fetchData = async () => {
         try {
             const res = await axios(Constants.URL_POSTS_BASE);
@@ -30,6 +26,10 @@ function Posts() {
             console.error(error);
         }
     };
+
+    useEffect(() => {
+        fetchData();
+    }, [isUpdatePage]);
 
     const addPost = async (post) => {
         try {
@@ -103,7 +103,7 @@ function Posts() {
             </Helmet>
             <div className="dashboard-header">
                 <h1 className="dashboard-title">Posts</h1>
-                <button className="btn-icon" onClick={openModal}>
+                <button type="button" className="btn-icon" onClick={openModal}>
                     <EditNote />
                 </button>
             </div>

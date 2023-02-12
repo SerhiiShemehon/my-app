@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import { BallTriangle } from 'react-loader-spinner';
 import { Helmet } from 'react-helmet';
 
-import { Comments } from '../../../components/Comments';
+import Comments from '../../../components/Comments';
 import ImageBanner from '../../../components/ImageBanner';
 
 import imageBanner from '../../../assets/images/image01.jpg';
@@ -18,12 +18,6 @@ function Post() {
     const [post, setPost] = useState({});
     const [like, setLike] = useState(0);
     const [status, setStatus] = useState(Constants.LOADING);
-
-    useEffect(() => {
-        window.scrollTo(0, 0);
-        fetchData();
-        updateView();
-    }, []);
 
     const fetchData = async () => {
         setStatus(Constants.LOADING);
@@ -46,6 +40,12 @@ function Post() {
             console.error(error);
         }
     };
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+        fetchData();
+        updateView();
+    }, []);
 
     const handleLike = async () => {
         try {
@@ -113,9 +113,9 @@ function Post() {
                         dangerouslySetInnerHTML={{ __html: post.body }}
                     />
                     <button
-                      type="button"
-                      className="btn-like"
-                      onClick={handleLike}
+                        type="button"
+                        className="btn-like"
+                        onClick={handleLike}
                     >
                         Like <Like />
                     </button>

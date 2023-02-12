@@ -1,6 +1,6 @@
-import React, { useState, useContext } from 'react';
+import { useState, useContext } from 'react';
 import { Helmet } from 'react-helmet';
-import { useNavigate, Link  } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 import { AuthContext } from '../../../context/auth';
 import { Form, Input } from '../../../components/Form';
@@ -9,7 +9,7 @@ import './Login.scss';
 import * as Constants from '../../../constants';
 
 function Login() {
-    const context = useContext(AuthContext);
+    const { login } = useContext(AuthContext);
     const [contact, setContact] = useState({
         email: '',
         password: '',
@@ -31,7 +31,7 @@ function Login() {
             })
         ).json();
         if (result) {
-            context.login(result);
+            login(result);
             setTimeout(() => {
                 navigate('/dashboard');
             }, 300);
@@ -74,7 +74,9 @@ function Login() {
                             Send
                         </button>
                     </Form>
-                    <Link className="link" to='/forgot-password'>Forgot Password?</Link>
+                    <Link className="link" to="/forgot-password">
+                        Forgot Password?
+                    </Link>
                 </div>
             </div>
         </>

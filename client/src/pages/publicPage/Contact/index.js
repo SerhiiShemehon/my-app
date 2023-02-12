@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 
 import ImageBanner from '../../../components/ImageBanner';
@@ -69,11 +69,11 @@ function Contact() {
                         />
                         <Input
                             onChange={handleChange}
-                            type={'email'}
-                            placeholder={'Email'}
-                            name={'email'}
+                            type="email"
+                            placeholder="Email"
+                            name="email"
                             required
-                            className={'col-6'}
+                            className="col-6"
                         />
                         <Input
                             onChange={handleChange}

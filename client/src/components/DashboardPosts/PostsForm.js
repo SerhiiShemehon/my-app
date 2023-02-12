@@ -3,7 +3,7 @@ import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import { Form, Input } from '../Form';
 
-const PostsForm = ({ addedPosts, closeModal }) => {
+function PostsForm({ addedPosts, closeModal }) {
     const [newPost, setNewPost] = useState({
         title: '',
         body: '',
@@ -99,6 +99,6 @@ const PostsForm = ({ addedPosts, closeModal }) => {
             </Form>
         </div>
     );
-};
+}
 
 export default PostsForm;

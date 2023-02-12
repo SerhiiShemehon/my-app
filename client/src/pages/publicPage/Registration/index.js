@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 
@@ -9,7 +9,7 @@ import './Registration.scss';
 import * as Constants from '../../../constants';
 
 function Registration() {
-    const context = useContext(AuthContext);
+    const { login } = useContext(AuthContext);
     const [contact, setContact] = useState({
         fmame: '',
         lmame: '',
@@ -38,7 +38,7 @@ function Registration() {
             })
         ).json();
         if (result) {
-            context.login(result);
+            login(result);
             setTimeout(() => {
                 navigate('/dashboard');
             }, 300);

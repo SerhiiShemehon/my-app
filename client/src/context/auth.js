@@ -1,4 +1,4 @@
-import React, { useReducer, createContext } from 'react';
+import { useReducer, createContext, useMemo } from 'react';
 import jwtDecode from 'jwt-decode';
 
 const initialState = {
@@ -76,7 +76,10 @@ function AuthProvider(props) {
 
     return (
         <AuthContext.Provider
-            value={{ user: state.user, login, logout, updateUser }}
+            value={useMemo(
+                () => ({ user: state.user, login, logout, updateUser }),
+                [state.user]
+            )}
             {...props}
         />
     );

@@ -1,4 +1,3 @@
-import React from 'react';
 import {
     AreaChart,
     Area,
@@ -11,7 +10,7 @@ import {
 
 import { DataStackedAreaChart } from '../../data';
 
-const StackedAreaChart = () => {
+function StackedAreaChart() {
     return (
         <ResponsiveContainer width="100%" height="100%">
             <AreaChart
@@ -53,6 +52,6 @@ const StackedAreaChart = () => {
             </AreaChart>
         </ResponsiveContainer>
     );
-};
+}
 
 export default StackedAreaChart;

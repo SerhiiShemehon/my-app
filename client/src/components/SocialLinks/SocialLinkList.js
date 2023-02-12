@@ -1,4 +1,3 @@
-import React from 'react';
 import './SocialLinks.scss';
 
 function SocialLinkList({ children }) {

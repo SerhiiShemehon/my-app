@@ -1,9 +1,8 @@
-import React from 'react';
 import { BarChart, Bar, ResponsiveContainer } from 'recharts';
 
 import { DataTinyBarChart } from '../../data';
 
-const TinyBarChart = () => {
+function TinyBarChart() {
     return (
         <ResponsiveContainer width="100%" height="100%">
             <BarChart width={150} height={40} data={DataTinyBarChart}>
@@ -11,6 +10,6 @@ const TinyBarChart = () => {
             </BarChart>
         </ResponsiveContainer>
     );
-};
+}
 
 export default TinyBarChart;

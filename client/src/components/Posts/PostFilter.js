@@ -1,49 +1,62 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 import { Input, Select } from '../Form';
 import { OPTIONS_ABV, OPTIONS_IBU } from '../../data';
 
 function PostFilter({ filterChange }) {
-    const [beer_name, setBeerName] = useState('');
-    const [abv_lt, setAbvLt] = useState('');
-    const [ibu_lt, setIbuLt] = useState('');
+    const [beerName, setBeerName] = useState('');
+    const [abvLt, setAbvLt] = useState('');
+    const [ibuLt, setIbuLt] = useState('');
 
     const filter = (name, abv, ibu) => {
         const params = {};
-        name ? (params.beer_name = name) : delete params.beer_name;
 
-        abv && abv !== '0' ? (params.abv_lt = abv) : delete params.abv_lt;
+        if (name) {
+            params.beerName = name;
+        } else {
+            delete params.beerName;
+        }
 
-        ibu && ibu !== '0' ? (params.ibu_lt = ibu) : delete params.ibu_lt;
+        if (abv && abv !== '0') {
+            params.abvLt = abv;
+        } else {
+            delete params.abvLt;
+        }
+
+        if (ibu && ibu !== '0') {
+            params.ibuLt = ibu;
+        } else {
+            delete params.ibuLt;
+        }
 
         filterChange(params);
     };
 
     const inputChange = (e) => {
         setBeerName(e.target.value);
-        filter(e.target.value, abv_lt, ibu_lt);
+        filter(e.target.value, abvLt, ibuLt);
     };
 
     const selectChangeABV = (e) => {
         setAbvLt(e.target.value);
-        filter(beer_name, e.target.value, ibu_lt);
+        filter(beerName, e.target.value, ibuLt);
     };
 
     const selectChangeIBU = (e) => {
         setIbuLt(e.target.value);
-        filter(beer_name, abv_lt, e.target.value);
+        filter(beerName, abvLt, e.target.value);
     };
 
     return (
         <div className="posts-filter">
             <Select
-                name="abv_lt"
+                name="abvLt"
                 options={OPTIONS_ABV}
                 firstOption="ABV less"
                 onChange={selectChangeABV}
             />
             <Select
-                name="ibu_lt"
+                name="ibuLt"
                 options={OPTIONS_IBU}
                 firstOption="IBU less"
                 onChange={selectChangeIBU}

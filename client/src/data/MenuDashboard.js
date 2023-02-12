@@ -27,7 +27,7 @@ const MENU_DASHBOARD = [
         title: 'Settings',
         link: '/settings',
         icon: Settings,
-    }
+    },
 ];
 
 export default MENU_DASHBOARD;

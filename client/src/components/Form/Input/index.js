@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import './Input.scss';
 import { ReactComponent as Close } from '../../../assets/icons/eye_password_see.svg';
 import { ReactComponent as See } from '../../../assets/icons/eye_key_look_password.svg';
@@ -20,7 +20,12 @@ function Input({ className, ...props }) {
         <div className={`${className} form-control`}>
             <input {...props} ref={inputRef} />
             {props.type === 'password' ? (
-                <span className="icon-control" onClick={handlePasswordClick}>
+                <span
+                    className="icon-control"
+                    onClick={handlePasswordClick}
+                    onKeyDown={handlePasswordClick}
+                    role="presentation"
+                >
                     {showPassword ? <Close /> : <See />}
                 </span>
             ) : null}

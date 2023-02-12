@@ -1,4 +1,3 @@
-import React from 'react';
 import { Helmet } from 'react-helmet';
 
 import ImageBanner from '../../../components/ImageBanner';
@@ -12,7 +11,7 @@ function NoMatch() {
             </Helmet>
             <ImageBanner
                 image={imageBanner}
-                title={'404'}
+                title="404"
                 link={{ url: '/', title: 'Go to Homepage' }}
             />
         </>

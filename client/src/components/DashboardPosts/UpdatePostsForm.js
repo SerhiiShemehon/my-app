@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import { Form, Input } from '../Form';
 
-const UpdatePostsForm = ({ post, updatePosts, closeModal }) => {
+function UpdatePostsForm({ post, updatePosts, closeModal }) {
     const [currentPost, setCurrentPost] = useState({
         title: post.title,
         body: post.body,
@@ -33,57 +33,57 @@ const UpdatePostsForm = ({ post, updatePosts, closeModal }) => {
     };
 
     return (
-        <div className={'post-form'}>
-            <h2 className={'title-block'}>Edit a Post</h2>
+        <div className="post-form">
+            <h2 className="title-block">Edit a Post</h2>
             <Form handleSubmit={handleSubmit}>
                 <Input
-                    type={'text'}
-                    placeholder={'Title'}
-                    name={'title'}
+                    type="text"
+                    placeholder="Title"
+                    name="title"
                     value={currentPost.title}
                     onChange={handleChange}
                     required
-                    className={'col-6'}
+                    className="col-6"
                 />
                 <Input
-                    type={'text'}
-                    placeholder={'Slug'}
-                    name={'slug'}
+                    type="text"
+                    placeholder="Slug"
+                    name="slug"
                     value={currentPost.slug}
                     onChange={handleChange}
                     required
-                    className={'col-6'}
+                    className="col-6"
                 />
                 <Input
-                    type={'text'}
-                    placeholder={'Categories'}
-                    name={'categories'}
+                    type="text"
+                    placeholder="Categories"
+                    name="categories"
                     value={currentPost.categories}
                     onChange={handleChange}
                     required
-                    className={'col-6'}
+                    className="col-6"
                 />
                 <Input
-                    type={'text'}
-                    placeholder={'Tag'}
-                    name={'tag'}
+                    type="text"
+                    placeholder="Tag"
+                    name="tag"
                     value={currentPost.tag}
                     onChange={handleChange}
                     required
-                    className={'col-6'}
+                    className="col-6"
                 />
                 <ReactQuill
-                  theme="snow"
-                  value={currentPost.body}
-                  onChange={handleTextChange}
-                  className="col-12"
+                    theme="snow"
+                    value={currentPost.body}
+                    onChange={handleTextChange}
+                    className="col-12"
                 />
-                <button type={'submit'} className={'btn-second'}>
+                <button type="submit" className="btn-second">
                     Submit
                 </button>
             </Form>
         </div>
     );
-};
+}
 
 export default UpdatePostsForm;
