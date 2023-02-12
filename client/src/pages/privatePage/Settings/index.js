@@ -1,9 +1,7 @@
-import React, { Suspense, useState, useEffect } from 'react';
-import axios from "axios";
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 import DataTable from 'react-data-table-component';
 import { Helmet } from 'react-helmet';
-
-import Loading from '../../../components/Loading';
 
 import * as Constants from '../../../constants';
 import './Profile.scss';
@@ -12,27 +10,27 @@ function Settings() {
     const [users, setUsers] = useState([]);
     const [updatePage, setUpdatePage] = useState(true);
 
+    const fetchData = async () => {
+        try {
+            const res = await axios(Constants.URL_LIST);
+            const data = await res.data;
+            setUsers(data);
+        } catch (error) {
+            console.error(error);
+        }
+    };
+
     useEffect(() => {
         fetchData();
     }, [updatePage]);
 
-  const fetchData = async () => {
-    try {
-      const res = await axios(Constants.URL_LIST);
-      const data = await res.data;
-      setUsers(data);
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
     const deleteUser = async (id) => {
-      try {
-        await axios.delete(`${Constants.URL_USER_BASE}${id}`);
-        setUpdatePage(!updatePage);
-      } catch (error) {
-        console.error(error);
-      }
+        try {
+            await axios.delete(`${Constants.URL_USER_BASE}${id}`);
+            setUpdatePage(!updatePage);
+        } catch (error) {
+            console.error(error);
+        }
     };
 
     const columns = [
@@ -52,6 +50,7 @@ function Settings() {
             name: 'Delete',
             selector: (row) => (
                 <button
+                    type="button"
                     style={{
                         background: 'transparent',
                         border: 'none',
@@ -59,7 +58,7 @@ function Settings() {
                         padding: '0',
                         cursor: 'pointer',
                     }}
-                    onClick={(e) => deleteUser(row._id)}
+                    onClick={() => deleteUser(row._id)}
                 >
                     Delete
                 </button>
@@ -75,9 +74,7 @@ function Settings() {
             </Helmet>
             <h1 className="dashboard-title">Settings</h1>
             <h2 className="dashboard-subtitle">Users</h2>
-            <Suspense fallback={<Loading />}>
-                <DataTable columns={columns} data={users} />
-            </Suspense>
+            <DataTable columns={columns} data={users} />
         </>
     );
 }

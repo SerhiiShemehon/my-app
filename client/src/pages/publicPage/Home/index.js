@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Helmet } from 'react-helmet';
 
@@ -17,9 +17,6 @@ import imageBanner from '../../../assets/images/image01.jpg';
 function Home() {
     const [posts, setPosts] = useState([]);
     const [status, setStatus] = useState(Constants.LOADING);
-    useEffect(() => {
-        fetchData();
-    }, []);
 
     const fetchData = async () => {
         window.scrollTo(0, 0);
@@ -33,6 +30,10 @@ function Home() {
         }
         setStatus(Constants.COMPLETE);
     };
+
+    useEffect(() => {
+        fetchData();
+    }, []);
 
     return (
         <>

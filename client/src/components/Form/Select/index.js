@@ -1,12 +1,10 @@
-import React from 'react';
-
 function Select({ options, firstOption, ...props }) {
     return (
         <select {...props}>
             <option value="0">{firstOption}</option>
-            {options.map((item, index) => (
+            {options.map((item) => (
                 <option
-                    key={index}
+                    key={item}
                     value={typeof item === 'string' ? item.toLowerCase() : item}
                 >
                     {item}

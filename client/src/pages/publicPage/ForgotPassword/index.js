@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { Form, Input } from '../../../components/Form';
 
@@ -9,7 +9,6 @@ function ForgotPassword() {
         email: '',
         password: '',
     });
-
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -24,15 +23,18 @@ function ForgotPassword() {
             <div className="admin-form-section small-section">
                 <div className="container">
                     <h2 className="title-block">Forgot Password</h2>
-                    <p className="subtitle-block">Enter your email or username, and we'll send you a link to reset your password.</p>
+                    <p className="subtitle-block">
+                        Enter your email or username, and we&apos;ll send you a
+                        link to reset your password.
+                    </p>
                     <Form handleSubmit={null}>
                         <Input
-                          onChange={handleChange}
-                          type="text"
-                          placeholder="Email / Username"
-                          name="email-username"
-                          required
-                          className="col-12"
+                            onChange={handleChange}
+                            type="text"
+                            placeholder="Email / Username"
+                            name="email-username"
+                            required
+                            className="col-12"
                         />
                         <button type="submit" className="btn-second">
                             Send

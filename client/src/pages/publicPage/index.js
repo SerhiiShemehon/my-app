@@ -21,5 +21,5 @@ export {
     PrivacyPolicy,
     Other,
     About,
-    Portfolio
+    Portfolio,
 };

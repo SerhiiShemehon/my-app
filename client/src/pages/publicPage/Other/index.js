@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, memo, useMemo } from 'react';
+import { useState, useEffect, useRef, memo, useMemo } from 'react';
 import { Helmet } from 'react-helmet';
 
 import ImageBanner from '../../../components/ImageBanner';
@@ -6,11 +6,9 @@ import imageBanner from '../../../assets/images/image03.jpg';
 
 import './Other.scss';
 
-const Title = memo(({ title }) => {
-    return <h2 className="title-section">{title}</h2>;
-});
+const Title = memo(({ title }) => <h2 className="title-section">{title}</h2>);
 
-const Modal = () => {
+function Modal() {
     const inputRef = useRef(null);
     const [modal, setModal] = useState(false);
     const handleSubmit = (e) => {
@@ -32,11 +30,19 @@ const Modal = () => {
     return (
         <>
             <Title title="useRef" />
-            <button className="btn btn-big" onClick={handleChange}>
+            <button
+                type="button"
+                className="btn btn-big"
+                onClick={handleChange}
+            >
                 Open modal
             </button>
             {modal ? (
-                <div className="modal-holder" onClick={handleClick}>
+                <div
+                    className="modal-holder"
+                    onClick={handleClick}
+                    role="presentation"
+                >
                     <div className="modal-block">
                         <form onSubmit={handleSubmit}>
                             <input type="text" ref={inputRef} />
@@ -49,49 +55,49 @@ const Modal = () => {
             ) : null}
         </>
     );
-};
+}
 
-const Memo = () => {
+function Memo() {
     const [count, setCount] = useState(0);
     return (
         <>
-            <Title title={'memo'} />
+            <Title title="memo" />
             <p>Count: {count}</p>
             <button
-                className={'btn btn-big'}
+                type="button"
+                className="btn btn-big"
                 onClick={() => setCount((prev) => prev + 1)}
             >
                 Click
             </button>
         </>
     );
-};
+}
 
 const list = [2, 58, 45, 3, 66, 585, 455];
-const sortList = () => {
-    return list.sort((a, b) => a - b);
-};
+const sortList = () => list.sort((a, b) => a - b);
 
-const UseMemo = () => {
+function UseMemo() {
     const [update, setUpdate] = useState(false);
     const numbers = useMemo(sortList, []);
 
     return (
         <>
-            <Title title={'useMemo'} />
+            <Title title="useMemo" />
             {JSON.stringify(update)}
-            {numbers.map((item, index) => (
-                <p key={index}>{item}</p>
+            {numbers.map((item) => (
+                <p key={item}>{item}</p>
             ))}
             <button
-                className={'btn btn-big'}
+                type="button"
+                className="btn btn-big"
                 onClick={() => setUpdate((prev) => !prev)}
             >
                 Click
             </button>
         </>
     );
-};
+}
 
 function Other() {
     useEffect(() => {
@@ -103,8 +109,8 @@ function Other() {
             <Helmet>
                 <title>Other | My App</title>
             </Helmet>
-            <ImageBanner image={imageBanner} title={'Contact'} />
-            <div className={'container'}>
+            <ImageBanner image={imageBanner} title="Contact" />
+            <div className="container">
                 <Modal />
                 <Memo />
                 <UseMemo />

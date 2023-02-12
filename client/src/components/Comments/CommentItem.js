@@ -1,16 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 import * as Constants from '../../constants';
 
 import { ReactComponent as Like } from '../../assets/icons/thumbs-up-solid.svg';
-import FormComments from "./FormComments";
+import FormComments from './FormComments';
 
-const CommentItem = ({ comment, handleCommentLike, addReplyComments, user }) => {
+function CommentItem({ comment, handleCommentLike, addReplyComments, user }) {
     const [author, setAuthor] = useState({});
     const [showReply, setShowReply] = useState(false);
-    useEffect(() => {
-        fetchUser();
-    }, []);
 
     const fetchUser = async () => {
         try {
@@ -24,8 +21,12 @@ const CommentItem = ({ comment, handleCommentLike, addReplyComments, user }) => 
         }
     };
 
+    useEffect(() => {
+        fetchUser();
+    }, []);
+
     const addComments = async (newComment) => {
-        addReplyComments(comment._id, newComment)
+        addReplyComments(comment._id, newComment);
     };
 
     return (
@@ -49,9 +50,9 @@ const CommentItem = ({ comment, handleCommentLike, addReplyComments, user }) => 
                             <Like />
                         </button>
                         <button
-                          type="button"
-                          className="btn-reply"
-                          onClick={() => setShowReply(!showReply)}
+                            type="button"
+                            className="btn-reply"
+                            onClick={() => setShowReply(!showReply)}
                         >
                             reply
                         </button>
@@ -63,15 +64,19 @@ const CommentItem = ({ comment, handleCommentLike, addReplyComments, user }) => 
                 className="text-block"
                 dangerouslySetInnerHTML={{ __html: comment.text }}
             />
-            {comment.replies.map((elem, index) => <div className="comment-item-reply" key={index}>
-                <div
-                  className="text-block"
-                  dangerouslySetInnerHTML={{ __html: elem }}
-                />
-            </div>)}
-            {user && showReply ? <FormComments addComments={addComments} /> : null}
+            {comment.replies.map((elem) => (
+                <div className="comment-item-reply" key={elem}>
+                    <div
+                        className="text-block"
+                        dangerouslySetInnerHTML={{ __html: elem }}
+                    />
+                </div>
+            ))}
+            {user && showReply ? (
+                <FormComments addComments={addComments} />
+            ) : null}
         </div>
     );
-};
+}
 
 export default CommentItem;

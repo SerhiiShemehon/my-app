@@ -1,9 +1,9 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 
 import Logo from '../Logo';
 import { NavGroup, NavItem, NavList } from '../Nav';
-import { FooterInfo, FooterNav } from './index';
+import FooterInfo from './FooterInfo';
+import FooterNav from './FooterNav';
 
 import { CATEGORY, TAG, MENU_FOOTER } from '../../data';
 
@@ -28,7 +28,7 @@ function Footer() {
                 <FooterNav>
                     <NavGroup title="Top Category">
                         <NavList className="footer-menu">
-                            {CATEGORY.map((item, index) => (
+                            {CATEGORY.map((item) => (
                                 <NavItem
                                     key={item.id}
                                     title={item.title}
@@ -39,7 +39,7 @@ function Footer() {
                     </NavGroup>
                     <NavGroup title="Top Tag">
                         <NavList className="footer-menu">
-                            {TAG.map((item, index) => (
+                            {TAG.map((item) => (
                                 <NavItem
                                     key={item.id}
                                     title={item.title}
@@ -50,7 +50,7 @@ function Footer() {
                     </NavGroup>
                     <NavGroup title="Menu">
                         <NavList className="footer-menu">
-                            {MENU_FOOTER.map((item, index) => (
+                            {MENU_FOOTER.map((item) => (
                                 <NavItem
                                     key={item.id}
                                     title={item.title}

@@ -1,4 +1,3 @@
-import React from 'react';
 import ReactDOM from 'react-dom';
 
 import style from './Modal.module.scss';
@@ -13,7 +12,12 @@ const Modal = ({ closeModal, children }) => {
     };
 
     return ReactDOM.createPortal(
-        <div className={`modal-holder ${style.holder}`} onClick={handleClick}>
+        <div
+            className={`modal-holder ${style.holder}`}
+            onClick={handleClick}
+            onKeyDown={handleClick}
+            role="presentation"
+        >
             <div className={style.content}>{children}</div>
         </div>,
         root

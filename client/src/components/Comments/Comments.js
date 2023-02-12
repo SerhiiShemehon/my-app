@@ -12,12 +12,6 @@ function Comments({ id }) {
     const [comments, setComments] = useState([]);
     const { user } = useContext(AuthContext);
 
-    useEffect(() => {
-        if (id !== undefined) {
-            fetchData();
-        }
-    }, [id]);
-
     const fetchData = async () => {
         try {
             const res = await axios(
@@ -29,6 +23,12 @@ function Comments({ id }) {
             console.error(error);
         }
     };
+
+    useEffect(() => {
+        if (id !== undefined) {
+            fetchData();
+        }
+    }, [id]);
 
     const handleCommentLike = async (commentId) => {
         try {
@@ -52,8 +52,8 @@ function Comments({ id }) {
                         userId: user._id,
                     }
                 );
-                const comments = await res.data.comments;
-                setComments(comments);
+                const newComments = await res.data.comments;
+                setComments(newComments);
             } catch (error) {
                 console.error(error);
             }
@@ -63,14 +63,15 @@ function Comments({ id }) {
     const addReplyComments = async (commentId, text) => {
         try {
             const res = await axios.patch(
-              `${Constants.URL_POSTS_BASE}${id}/comments/${commentId}/reply`, {text}
+                `${Constants.URL_POSTS_BASE}${id}/comments/${commentId}/reply`,
+                { text }
             );
             const data = await res.data.comments;
             setComments(data);
         } catch (error) {
             console.error(error);
         }
-    }
+    };
 
     return (
         <div className="comments-section">

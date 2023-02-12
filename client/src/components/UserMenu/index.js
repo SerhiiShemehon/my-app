@@ -13,7 +13,7 @@ const AdminInfoHeader = React.lazy(() =>
     import('../AdminInfo/AdminInfoHeader')
 );
 
-const UserMenu = () => {
+function UserMenu() {
     const { user, logout } = useContext(AuthContext);
     const navigate = useNavigate();
 
@@ -51,6 +51,7 @@ const UserMenu = () => {
                             </li>
                             <li>
                                 <button
+                                    type="submit"
                                     className={style.sublink}
                                     onClick={logOut}
                                 >
@@ -81,6 +82,6 @@ const UserMenu = () => {
             )}
         </div>
     );
-};
+}
 
 export default UserMenu;

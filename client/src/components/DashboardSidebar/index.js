@@ -7,7 +7,7 @@ import { MENU_DASHBOARD } from '../../data';
 
 const AdminInfo = React.lazy(() => import('../AdminInfo/AdminInfo'));
 
-const DashboardSidebar = () => {
+function DashboardSidebar() {
     const { user } = useContext(AuthContext);
     return (
         <div className="dashboard-sidebar">
@@ -17,7 +17,7 @@ const DashboardSidebar = () => {
                 </Link>
             </Suspense>
             <NavList className="dashboard-menu">
-                {MENU_DASHBOARD.map((item, index) => (
+                {MENU_DASHBOARD.map((item) => (
                     <NavItem
                         key={item.id}
                         title={item.title}
@@ -28,5 +28,5 @@ const DashboardSidebar = () => {
             </NavList>
         </div>
     );
-};
+}
 export default DashboardSidebar;

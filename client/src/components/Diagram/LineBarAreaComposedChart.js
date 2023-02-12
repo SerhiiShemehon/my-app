@@ -1,4 +1,3 @@
-import React from 'react';
 import {
     ComposedChart,
     Line,
@@ -15,7 +14,7 @@ import {
 
 import { DataLineBarAreaComposedChart } from '../../data';
 
-const LineBarAreaComposedChart = () => {
+function LineBarAreaComposedChart() {
     return (
         <ResponsiveContainer width="100%" height="100%">
             <ComposedChart
@@ -46,6 +45,6 @@ const LineBarAreaComposedChart = () => {
             </ComposedChart>
         </ResponsiveContainer>
     );
-};
+}
 
 export default LineBarAreaComposedChart;

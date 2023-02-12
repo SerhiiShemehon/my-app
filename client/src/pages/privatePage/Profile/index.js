@@ -1,6 +1,6 @@
 import React, { Suspense, useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import axios from "axios";
+import axios from 'axios';
 import { Helmet } from 'react-helmet';
 
 import Loading from '../../../components/Loading';
@@ -48,17 +48,17 @@ function Profile() {
         e.preventDefault();
         try {
             await axios.patch(
-              `${Constants.URL_USER_BASE}${id}`,
-              {
-                  fullName: userData.fullName,
-                  email: userData.email,
-                  _id: id,
-              },
-              {
-                  headers: {
-                      'Content-Type': 'application/json',
-                  },
-              }
+                `${Constants.URL_USER_BASE}${id}`,
+                {
+                    fullName: userData.fullName,
+                    email: userData.email,
+                    _id: id,
+                },
+                {
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                }
             );
             updateUser(userData);
             setModal(false);

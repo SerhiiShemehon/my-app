@@ -1,6 +1,4 @@
-import React from 'react';
-
-function SocialLinkItem({ Icon, alt, link }) {
+function SocialLinkItem({ Icon, link }) {
     return (
         <li className="social-link-item">
             <a href={link}>

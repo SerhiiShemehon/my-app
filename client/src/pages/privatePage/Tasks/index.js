@@ -12,10 +12,6 @@ function Tasks() {
     const [tasks, setTasks] = useState([]);
     const [updatePage, setUpdatePage] = useState(true);
 
-    useEffect(() => {
-        fetchData();
-    }, [updatePage]);
-
     const fetchData = async () => {
         try {
             const res = await axios(Constants.URL_TASK_BASE);
@@ -25,6 +21,10 @@ function Tasks() {
             console.error(error);
         }
     };
+
+    useEffect(() => {
+        fetchData();
+    }, [updatePage]);
 
     const addTasks = async (title) => {
         try {
@@ -61,21 +61,21 @@ function Tasks() {
                         },
                     }
                 );
-                const updateTasks = tasks.map((elem) =>
+                const updateCurrentTask = tasks.map((elem) =>
                     elem._id === id ? { ...elem, task: title } : elem
                 );
-                setTasks(updateTasks);
+                setTasks(updateCurrentTask);
             } catch (error) {
                 console.error(error);
             }
         } else {
             try {
-                const updateTasks = tasks.map((elem) =>
+                const updateCurrentTask = tasks.map((elem) =>
                     elem._id === id ? { ...elem, [key]: !elem[key] } : elem
                 );
                 const updateTask = tasks.find((elem) => elem._id === id);
                 updateTask[key] = !updateTask[key];
-                setTasks(updateTasks);
+                setTasks(updateCurrentTask);
                 await axios.patch(
                     `${Constants.URL_TASK_BASE}${id}`,
                     updateTask,
