@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef, memo, useMemo } from 'react';
 import { Helmet } from 'react-helmet';
 
+import Accordion from '../../../components/Accordion';
 import ImageBanner from '../../../components/ImageBanner';
 import imageBanner from '../../../assets/images/image03.jpg';
 
@@ -111,6 +112,21 @@ function Other() {
             </Helmet>
             <ImageBanner image={imageBanner} title="Contact" />
             <div className="container">
+                <Title title="Accordion" />
+                <Accordion items={[
+                  {
+                    title: 'text 1',
+                    content: 'content 1'
+                  },
+                  {
+                    title: 'text 2',
+                    content: 'content 2'
+                  },
+                  {
+                    title: 'text 3',
+                    content: 'content 3'
+                  }
+                ]}/>
                 <Modal />
                 <Memo />
                 <UseMemo />
