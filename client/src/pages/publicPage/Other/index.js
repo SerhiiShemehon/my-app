@@ -113,20 +113,22 @@ function Other() {
             <ImageBanner image={imageBanner} title="Contact" />
             <div className="container">
                 <Title title="Accordion" />
-                <Accordion items={[
-                  {
-                    title: 'text 1',
-                    content: 'content 1'
-                  },
-                  {
-                    title: 'text 2',
-                    content: 'content 2'
-                  },
-                  {
-                    title: 'text 3',
-                    content: 'content 3'
-                  }
-                ]}/>
+                <Accordion
+                    items={[
+                        {
+                            title: 'text 1',
+                            content: 'content 1',
+                        },
+                        {
+                            title: 'text 2',
+                            content: 'content 2',
+                        },
+                        {
+                            title: 'text 3',
+                            content: 'content 3',
+                        },
+                    ]}
+                />
                 <Modal />
                 <Memo />
                 <UseMemo />

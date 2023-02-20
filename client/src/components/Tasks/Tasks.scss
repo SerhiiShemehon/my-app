@@ -114,8 +114,15 @@
         font-size: 14px;
         color: red;
     }
+    form {
+        display: flex;
+    }
+    .form-control {
+        width: 100%;
+        margin-right: 20px;
+    }
     input {
-        width: 50%;
+        width: 100%;
         background: #ffffff;
         border: 1px solid #e6e7e9;
         border-radius: 8px;

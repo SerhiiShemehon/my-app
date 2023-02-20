@@ -5,6 +5,7 @@ export const COMPLETE = 'COMPLETE';
 export const ERROR = 'ERROR';
 
 export const URL_BASE = 'http://localhost:5010/';
+export const URL_BASE_SOCKET = 'http://localhost:2000/';
 
 export const URL_USER_BASE = `${URL_BASE}user/`;
 export const URL_USER_LOGIN = `${URL_USER_BASE}login`;

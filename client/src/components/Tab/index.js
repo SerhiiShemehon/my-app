@@ -26,11 +26,11 @@ function Tab({ items }) {
                 ))}
             </div>
             {items.map((item, index) =>
-              activeIndex === index ? (
-                <div key={item.title} className={style.item}>
-                    {item.content}
-                </div>
-              ) : null
+                activeIndex === index ? (
+                    <div key={item.title} className={style.item}>
+                        {item.content}
+                    </div>
+                ) : null
             )}
         </div>
     );

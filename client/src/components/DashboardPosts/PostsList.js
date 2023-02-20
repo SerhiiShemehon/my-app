@@ -2,9 +2,9 @@ import PostsItem from './PostsItem';
 
 import './Posts.scss';
 
-function PostsList({ posts, updatePosts, removePosts }) {
+function PostsList({ posts, updatePosts, removePosts, className }) {
     return (
-        <div className="post-list">
+        <div className={`post-list ${className}`}>
             <div className="post-header">
                 <span>Post</span>
                 <span>Tag</span>

@@ -23,7 +23,7 @@ function PostsForm({ addedPosts, closeModal }) {
     const handleFileChange = (e) => {
         setNewPost({
             ...newPost,
-            [e.target.name]: e.target.files[0],
+            thumbnail: e.target.files[0],
         });
     };
 

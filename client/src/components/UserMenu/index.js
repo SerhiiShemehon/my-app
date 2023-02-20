@@ -27,7 +27,7 @@ function UserMenu() {
             {user ? (
                 <>
                     <Link to="/profile" className={style.link}>
-                        <User /> Username
+                        <User /> {user.fullName}
                     </Link>
                     <div className={style.dropdown}>
                         <Suspense fallback={<Loading />}>
